@@ -7,74 +7,53 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <nav class="navbar">
-      <h3 class="navTitle">Web Topics</h3>
+    <header class="navbar container box-shadow">
+      <p class="navTitle">Web Topics</p>
       <div class="navList">
-        <a href="#">Dark Mode</a> <a href="#">Favourites</a>
+        <a class="navListAnchor" href="#"></a>
+        <a class="navListAnchor" href="#"></a>
       </div>
-    </nav>
+    </header>
     <div class="top">
-      <div class="topText">
+      <div class="topText container">
         <h2>Welcome to our website!</h2>
         <p>We have a new design that's fresh, modern, and easy to use.</p>
       </div>
     </div>
-    <div class="form">
-      <input type="text" placeholder="Search the website..." />
-      <div class="selectInput" id="sortInput">
-        <label for="sortSelect" class="sortTitle">Sort by:</label>
-        <select name="sort" id="sortSelect">
-          <option value="default" selected hidden>Default</option>
-          <option value="default">Default</option>
-          <option value="default">Default</option>
-          <option value="default">Default</option>
-        </select>
-      </div>
-      <div class="selectInput" id="filterInput">
-        <label for="filterSelect" class="filterTitle">Filter by:</label>
-        <select name="filter" id="filterSelect">
-          <option value="default" selected hidden>Default</option>
-        </select>
-      </div>
-    </div>
-    <h1 class="topicsTitle">"24" Web Topics Found</h1>
-    <div class="topics">
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
-      </div>
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
-      </div>
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
-      </div>
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
-      </div>
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
-      </div>
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
-      </div>
-      <div class="topic">
-        <img width="300" src="assets/images/html.png" alt="" />
-        <p>Web Development Languages</p>
-        <p>HTML</p>
+    <div class="container">
+      <div class="inputSection box-shadow rounded">
+        <div class="searchInput">
+          <ion-icon class="searchIcon" name="search-outline"></ion-icon>
+          <input type="text" placeholder="Search the website..." />
+        </div>
+
+        <div class="selectInput" id="sortInput">
+          <label for="sortSelect" class="sortTitle">Sort by:</label>
+          <select name="sort" id="sortSelect">
+            <option value="default" selected hidden>Default</option>
+            <option value="default">Default</option>
+            <option value="default">Default</option>
+            <option value="default">Default</option>
+          </select>
+        </div>
+        <div class="selectInput" id="filterInput">
+          <label for="filterSelect" class="filterTitle">Filter by:</label>
+          <select name="filter" id="filterSelect">
+            <option value="default" selected hidden>Default</option>
+          </select>
+        </div>
       </div>
     </div>
+    <h2 class="topicsTitle container">"24" Web Topics Found</h2>
+    <div class="topics container" id="topicsContainer"></div>
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
     <script src="/app.js"></script>
   </body>
 </html>

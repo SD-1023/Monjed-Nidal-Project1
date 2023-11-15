@@ -1,0 +1,205 @@
+﻿
+
+<HTML>
+Welcome to our website!
+We have a new design that's fresh, modern, and easy to use.
+CSS
+< />
+ND
+Web Development Languages HTML
+Web Development Languages CSS
+JS
+JavaScript
+Web Development Languages JavaScript
+jQuery
+Frontend Frameworks and Libraries jQuery
+A
+Frontend Frameworks and Libraries Angular
+Author: Sarah Smith
+Author: David Lee
+Author: Emily Chen
+Author: John Johnson
+Author: Jessica Davis
+React JS
+Frontend Frameworks and Libraries React
+V
+Vue.js
+nodeR
+✡
+Frontend Frameworks and Libraries Vue.js
+Backend Frameworks and Libraries
+Node.js
+Author: Daniel Brown
+Author: Ava Jones
+django
+Flask
+web development,
+one drop at a time
+Author: Michael Kim
+QUERY LANGUAGE
+Express JS
+RAILS
+Backend Frameworks and Libraries Express.js
+Backend Frameworks and Libraries
+Ruby on Rails
+Author: Sophia Rodriguez
+Source
+SQL
+SSQL INJE
+MYSOLU BASIC
+SQL SERV
+NoSQL
+Database
+Open
+Backend Frameworks and Libraries Django
+Backend Frameworks and Libraries Flask
+Databases and APIs SQL
+Author: William Lee
+REST
+API
+Databases and APIs NoSQL
+Databases and APIs REST APIs
+Author: Olivia Martinez
+Author: Ethan Thompson
+Author: Madison Davis
+Author: Isabella Wilson
+Author: Jacob Garcia
+GraphQL
+Databases and APIs GraphQL
+ว
+U
+OAuth2
+{JSON}
+Web Development Concepts and T... OAuth
+Web Development Concepts and T... JSON
+AJAX
+Asynchronous Javascript and XML
+Web Development Concepts and T... AJAX
+WEBSOCKETS
+전
+Web Development Concepts and T... Websockets
+Author: Mia Brown
+Author: Evelyn Nguyen
+Author: Liam Hernandez
+Author: Avery Perez
+Web Development Concepts and T... Responsive Design
+Author: Ryan Jones
+lebsite Performance Optimization
+©
+ACCESSIBILITY
+»
+♡
+User Needs
+Information
+User
+Experience
+Business Goals
+H
+T
+>
+Author: Victoria Kim
+Th
+that you want for all compo
+The number of colors y
+nding dev
+Sblue-ght
+#OCES
+Sale-light-1 CIDE
+Sblue-light-2 #DUCTS
+Sblue-light-3 #377
+blue-dark-1
+A
+Sgreen-light AFTER
+Sgreen-light-2
+Sgreen-light-3
+VAPE ES
+Web Development Concepts and T... Accessibility
+Web Development Concepts and T... User Experience (UX)
+Web Development Concepts and T... User Interface (UI)
+Web Development Concepts and T... Design Systems
+Author: Samantha Martin
+Author: Luke Davis
+CROSS BROWSER
+...
+COMPATIBILITY
+Google
+SEO?
+Author: Grace Wilson
+10
+90
+0011
+101
+100
+0100
+01
+11
+01
+0101
+10
+01010101010001
+01011100110
+11001
+Author: Noah Martinez
+TESTING
+DEBUGGING
+Web Development Concepts and T... Performance Optimization
+Web Development Concepts and T... Cross-Browser Compatibility
+Web Development Concepts and T... Search Engine Optimization (SEO)
+Web Development Concepts and T... Web Security
+Web Development Concepts and T... Testing and Debugging
+Author: Chloe Taylor
+Author: David Lee
+BUILD
+CODE
+CI
+TEST
+PLAN
+RELEASE
+DEPLOY
+CD
+MONITOR
+OPERATE
+8
+DevOps
+Web Development Concepts and T... Continuous
+Integration/Continuous...
+Web Development Concepts and T... DevOps
+Author: Madison Davis
+Author: Emily Kim
+CLOUD
+COMPUTING
+Web Development Concepts and T... Cloud Computing
+Author: Isabella Wilson
+Author: Jacob Garcia
+PWA
+W3W
+Web Accessibility Initiative (WAI)
+Å
+HubSpot
+C
+W
+crownpeak
+CMS
+CS
+W
+magnolia
+Author: Gabriel Hernandez
+Author: Avery Perez
+docker.
+Web Development Concepts and T... Docker
+10
+MICROSERVICES
+Web Development Concepts and T... Microservices
+Author: Mia Brown
+f
+Web Development Concepts and T... Progressive Web Apps (PWA)
+Web Development Concepts and T... Web Accessibility Initiative (WAI)
+Web Development Concepts and T... Content Management Systems (CMS)
+Web Development Concepts and T... Web Analytics
+Author: Liam Hernandez
+Author: Avery Perez
+Author: Victoria Kim
+Developed with
+© 2023
+Author: Ryan Jones
+Author: Evelyn Nguyen

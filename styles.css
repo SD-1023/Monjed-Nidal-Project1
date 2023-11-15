@@ -10,6 +10,8 @@
   --lines-color: #dddddd;
   --body-text: #333333;
   --heart-color: #dc143c;
+  --white: #ffffff;
+  --grey-border-color: #d6d6d6;
 
   /* Dark Mode */
 
@@ -29,41 +31,60 @@ body {
   background-color: var(--bg_body);
 }
 
+.container {
+  padding: 0.3rem 2.8rem;
+}
+
+.box-shadow {
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.3rem 2.8rem;
-  background-color: white;
+  background-color: var(--white);
 }
 .navTitle {
   color: var(--brand-primary);
-  font-weight: 400;
+  font-size: 18px;
+}
+
+.navList {
+  display: flex;
+  justify-content: space-between;
+}
+.navList .icon {
+  color: var(--body-text);
+  --ionicon-stroke-width: 40px;
+  padding: 0px 4px;
 }
 .navList a {
   color: var(--dark-lines-color);
   text-decoration: none;
-  border: 1px solid #d6d6d6;
+  border: 1px solid var(--grey-border-color);
   padding: 5px 7px;
   border-radius: 5px;
-  font-weight: 400;
+  display: flex;
+  align-items: center;
+  margin-left: 0.3rem;
 }
 
 .top {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  height: 12rem;
-  width: 100%;
-  background-image: url("./assets/background.svg");
+  height: 10rem;
+  background-image: url("./assets/desktop-top-background.svg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-color: white;
+  background-size: contain;
+  background-color: var(--white);
 }
-.top .rightTriangle {
-  top: 0px;
-  position: absolute;
-}
+
 .topText {
   align-self: center;
   margin-top: 4rem;
@@ -80,28 +101,37 @@ body {
   color: #333333;
 }
 
-.form {
+.inputSection {
+  margin-top: 0.7rem;
+  position: relative;
   font-weight: 500;
   display: flex;
-  flex-wrap: nowrap;
-  margin: 1rem 2.8rem;
   height: 3.5rem;
-  background-color: white;
-  padding-left: 2.4rem;
-  border-radius: 10px;
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
+  background-color: var(--white);
 }
-.form input {
-  width: 70% !important;
+.searchInput {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  padding-left: 2.3rem;
+}
+.searchInput input {
+  width: 100%;
   border: none;
-  border: 1px solid #bababa;
+  border: 1px solid var(--grey-border-color);
   border-top: none;
   border-bottom: none;
   border-left: none;
   font-size: 16px;
-  font-weight: 500;
   font-family: "Nunito Sans", sans-serif;
   outline: none;
+}
+.searchIcon {
+  font-size: 20px;
+  position: absolute;
+  align-self: center;
+  left: 12px;
+  color: var(--body-text);
 }
 #sortInput {
   border: 1px solid #bababa;
@@ -109,11 +139,11 @@ body {
   border-bottom: none;
   border-left: none;
 }
-.form .selectInput {
+.inputSection .selectInput {
   padding: 0.2rem 0.5rem;
   width: 30%;
 }
-.form .selectInput select {
+.inputSection .selectInput select {
   border: none;
   width: 100%;
   font-family: "Nunito Sans", sans-serif;
@@ -122,26 +152,100 @@ body {
   font-size: 16px;
 }
 
-.form label {
-  font-size: 14px;
+.inputSection label {
+  font-size: 13px;
   padding-left: 4px;
 }
 
 .topicsTitle {
-  margin: 1rem 2.8rem;
   color: var(--body-text);
 }
 
 .topics {
-  margin: 1rem 0rem;
-  padding-right: 2.8rem;
-  margin-left: 2.8rem;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
 }
 .topic {
-  margin: 1rem;
-  margin-left: 0px;
-  background-color: white;
+  height: fit-content;
+  background-color: var(--white);
+  max-width: 300px;
+  text-decoration: none;
+  color: var(--body-text);
+}
+.topic img {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  height: 150px;
+}
+
+.topicDescription {
+  padding: 1rem 1rem;
+  height: 7rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topicTitle {
+  margin: 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.topicDescription .author {
+  color: #5d5d5d;
+  font-size: 14px;
+  margin: 0px;
+}
+@media (max-width: 720px) {
+  .top {
+    background-image: url("./assets/mobile-top-background.svg");
+  }
+}
+@media (max-width: 632px) {
+  .container {
+    padding: 0.3rem 1rem;
+  }
+
+  .top {
+    height: 8rem;
+  }
+
+  .topText {
+    margin-top: 2rem;
+  }
+  .top h2 {
+    font-size: 20px;
+  }
+  .top p {
+    font-size: 15px;
+  }
+
+  .inputSection {
+    flex-wrap: wrap;
+    height: fit-content;
+  }
+  .searchInput {
+    width: 100%;
+    border-bottom: 1px solid var(--grey-border-color);
+  }
+  .searchInput input {
+    width: 100%;
+    height: 3rem;
+    border-top-right-radius: 10px;
+    border-right: none;
+  }
+  .inputSection .selectInput {
+    padding: 0.2rem 0.6rem;
+    width: 50%;
+  }
+
+  .topic {
+    max-width: 100%;
+  }
+  .topic img {
+    height: 200px;
+  }
 }
