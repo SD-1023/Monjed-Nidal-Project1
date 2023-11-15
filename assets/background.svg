@@ -1,0 +1,34 @@
+<svg width="800" height="128" xmlns="http://www.w3.org/2000/svg" stroke="null" style="vector-effect: non-scaling-stroke;">
+ <g stroke="null">
+  <title stroke="null">Layer 1</title>
+  <path stroke="#000" fill="none" d="m197.015,362.68l0,-1.49l1.49,1.49l-1.49,0z" id="svg_9"/>
+  <path stroke="#000" fill="none" d="m434.82,466.16l0,-1.49l1.49,1.49l-1.49,0z" id="svg_10"/>
+  <path stroke="#000" fill="none" d="m195.025,442.28l0,-1.49l1.49,1.49l-1.49,0z" id="svg_11"/>
+  <path stroke="#000" fill="none" d="m234.825,474.12l0,-1.49l1.49,1.49l-1.49,0z" id="svg_12"/>
+  <path stroke="#000" fill="none" d="m131.345,405.465l0,-1.49l1.49,1.49l-1.49,0z" id="svg_13"/>
+  <path stroke="#000" fill="none" d="m376.115,446.16687l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_15"/>
+  <path stroke="#000" fill="none" d="m517.405,320.79687l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_16"/>
+  <path stroke="#000" fill="none" d="m563.175,249.15688l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_17"/>
+  <path stroke="#000" fill="none" d="m483.575,413.33187l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_18"/>
+  <path stroke="#000" fill="none" d="m548.25,492.93187l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_19"/>
+  <path stroke="#000" fill="none" d="m858.69,457.11187l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_20"/>
+  <path stroke="#000" fill="none" opacity="NaN" d="m204,445c397.76471,112.76471 254,753 202,303" id="svg_22"/>
+  <path stroke="#000" fill="none" d="m323.38,327.76187l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_23"/>
+  <path stroke="#000" fill="none" d="m318.405,184.48188l0.745,-1.30375l0.745,1.30375l-1.49,0z" id="svg_24"/>
+  <path stroke-width="0" stroke="#ffffff" id="svg_1" d="m800.80728,0l0,87.99992l-729.90742,-87.99992l729.90742,0z" fill="url(#svg_34)"/>
+  <path stroke-width="0" stroke-dasharray="2,2" stroke="#ffffff" id="svg_3" d="m0,0l0,77.99994l702.4137,-77.99994l-702.4137,0z" fill="url(#svg_26)"/>
+ </g>
+ <defs stroke="null" style="vector-effect: non-scaling-stroke;">
+  <linearGradient spreadMethod="pad" y2="0" x2="1" y1="0" x1="0" id="svg_26">
+   <stop offset="0" stop-opacity="0.99609" stop-color="#086cab"/>
+   <stop offset="1" stop-opacity="0.99609" stop-color="#07a182"/>
+   <stop offset="1" stop-color="#f85e7d"/>
+   <stop offset="NaN" stop-opacity="0" stop-color="0"/>
+   <stop offset="NaN" stop-opacity="0" stop-color="0"/>
+  </linearGradient>
+  <linearGradient y2="0" x2="1" y1="0" x1="0" id="svg_34">
+   <stop offset="0" stop-opacity="0.99609" stop-color="#068e9b"/>
+   <stop offset="0.60156" stop-opacity="0.99609" stop-color="#03c180"/>
+  </linearGradient>
+ </defs>
+</svg>

@@ -1,0 +1,147 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap");
+
+:root {
+  /* Default (Light Mode) */
+
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #ffffff;
+  --bg_body: #f0f9ff;
+  --lines-color: #dddddd;
+  --body-text: #333333;
+  --heart-color: #dc143c;
+
+  /* Dark Mode */
+
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --dark-bg_default: #1a1a1a;
+  --dark-bg_body: #282828;
+  --dark-lines-color: #000000;
+  --dark-body-text: #ededed;
+  --heart-color: #dc143c;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif !important;
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--bg_body);
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.3rem 2.8rem;
+  background-color: white;
+}
+.navTitle {
+  color: var(--brand-primary);
+  font-weight: 400;
+}
+.navList a {
+  color: var(--dark-lines-color);
+  text-decoration: none;
+  border: 1px solid #d6d6d6;
+  padding: 5px 7px;
+  border-radius: 5px;
+  font-weight: 400;
+}
+
+.top {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 12rem;
+  width: 100%;
+  background-image: url("./assets/background.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: white;
+}
+.top .rightTriangle {
+  top: 0px;
+  position: absolute;
+}
+.topText {
+  align-self: center;
+  margin-top: 4rem;
+}
+.top h2,
+.top p {
+  margin: 0px;
+}
+.top h2 {
+  color: var(--brand-secondary);
+}
+.top p {
+  font-size: 18px;
+  color: #333333;
+}
+
+.form {
+  font-weight: 500;
+  display: flex;
+  flex-wrap: nowrap;
+  margin: 1rem 2.8rem;
+  height: 3.5rem;
+  background-color: white;
+  padding-left: 2.4rem;
+  border-radius: 10px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
+}
+.form input {
+  width: 70% !important;
+  border: none;
+  border: 1px solid #bababa;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Nunito Sans", sans-serif;
+  outline: none;
+}
+#sortInput {
+  border: 1px solid #bababa;
+  border-top: none;
+  border-bottom: none;
+  border-left: none;
+}
+.form .selectInput {
+  padding: 0.2rem 0.5rem;
+  width: 30%;
+}
+.form .selectInput select {
+  border: none;
+  width: 100%;
+  font-family: "Nunito Sans", sans-serif;
+  outline: none;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+.form label {
+  font-size: 14px;
+  padding-left: 4px;
+}
+
+.topicsTitle {
+  margin: 1rem 2.8rem;
+  color: var(--body-text);
+}
+
+.topics {
+  margin: 1rem 0rem;
+  padding-right: 2.8rem;
+  margin-left: 2.8rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.topic {
+  margin: 1rem;
+  margin-left: 0px;
+  background-color: white;
+}
