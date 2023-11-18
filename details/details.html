@@ -3,12 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Project 1</title>
-    <link rel="stylesheet" href="styles.css" />
+    <title>Details</title>
+    <link rel="stylesheet" href="../styles.css" />
+    <link rel="stylesheet" href="./details.css" />
   </head>
   <body>
     <header class="navbar container box-shadow">
-      <a href="/" class="navTitle">Web Topics</a>
+      <a class="navTitle" href="/">Web Topics</a>
       <div class="navList">
         <a class="navListButton" href="#"
           ><ion-icon class="navButtonIcon icon" name="moon-outline"></ion-icon
@@ -28,38 +29,45 @@
         </p>
       </div>
     </section>
-    <section class="container">
-      <form class="inputSection box-shadow rounded">
-        <div class="searchSection">
-          <ion-icon class="searchIcon icon" name="search-outline"></ion-icon>
-          <input
-            class="inputField"
-            type="text"
-            placeholder="Search the website..."
-          />
-        </div>
 
-        <div class="selectsContainer">
-          <div class="selectInput sortInput">
-            <label for="sortSelect" class="sortTitle">Sort by:</label>
-            <select class="styled-select" name="sort" id="sortSelect">
-              <option value="default" selected hidden>Default</option>
-              <option value="default">Default</option>
-              <option value="default">Default</option>
-              <option value="default">Default</option>
-            </select>
-          </div>
-          <div class="selectInput" id="filterInput">
-            <label class="filterTitle">Filter by:</label>
-            <select class="styled-select" name="filter" id="filterSelect">
-              <option value="default" selected hidden>Default</option>
-            </select>
-          </div>
+    <main class="detailsContainer" id="detailsContainer">
+      <div class="info">
+        <span class="">Web Development Languages</span>
+        <h2 class="language">HTML</h2>
+        <p>
+          HTML (Hypertext Markup Language) is the standard markup language for
+          creating web pages and other information that can be displayed in a
+          web browser. It provides a structure for content and defines how it
+          should be displayed on a web page, including text, images , and
+          multimedia. HTML is essential for creating static web pages and is a
+          foundational technology for the World Wide Web.
+        </p>
+      </div>
+      <aside>
+        <img src="../assets/images/javascript.jpg" alt="" />
+        <p><b>HTML</b> by <a href="#">Sarah Smith</a></p>
+        <div>
+          <p>Interested about this topic?</p>
+          <a href="#"
+            >Add to Favoutites
+            <ion-icon class="icon" name="heart-outline"></ion-icon
+          ></a>
+          <small>Unlimited Credits</small>
         </div>
-      </form>
-    </section>
-    <h2 class="topicsTitle container">"24" Web Topics Found</h2>
-    <section class="topics container" id="topicsContainer"></section>
+      </aside>
+
+      <div class="subTopics">
+        <h1 class="subTopicsTitle">HTML Sub Topics</h1>
+        <ul class="subTopicsList">
+          <li>Lorem ipsum dolor sit amet consectetur.</li>
+          <li>Lorem ipsum dolor sit amet consectetur.</li>
+          <li>Lorem ipsum dolor sit amet consectetur.</li>
+          <li>Lorem ipsum dolor sit amet consectetur.</li>
+          <li>Lorem ipsum dolor sit amet consectetur.</li>
+          <li>Lorem ipsum dolor sit amet consectetur.</li>
+        </ul>
+      </div>
+    </main>
     <section class="favouratesSection hide container box-shadow">
       <h3 class="favouratesTitle">My Favourite Topics</h3>
       <div class="favouriteTopicsContainer">
@@ -106,9 +114,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="/app.js"></script>
-    <script src="/navbar.js"></script>
-    <script src="/favoirites.js"></script>
-    <script src="/theme.js"></script>
+    <script src="./details.js"></script>
+    <script src="../navbar.js"></script>
+    <script src="../favoirites.js"></script>
+    <script src="./detailsTheme.js"></script>
   </body>
 </html>

@@ -1,8 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,200;6..12,400;6..12,700&display=swap");
 
 :root {
-  /* Default (Light Mode) */
-
+  /* Colors */
   --brand-primary: #0768ac;
   --brand-secondary: #03c180;
   --bg_default: #ffffff;
@@ -12,23 +11,46 @@
   --heart-color: #dc143c;
   --white: #ffffff;
   --grey-border-color: #d6d6d6;
+  --author-color: #5d5d5d;
+  --top-paragraph-color: #333333;
 
-  /* Dark Mode */
+  /* Box-Shadow */
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
 
-  --brand-primary: #0768ac;
-  --brand-secondary: #03c180;
-  --dark-bg_default: #1a1a1a;
-  --dark-bg_body: #282828;
-  --dark-lines-color: #000000;
-  --dark-body-text: #ededed;
-  --heart-color: #dc143c;
+  /* Borders */
+  --favourite-topic-border: 1px solid var(--grey-border-color);
+
+  /* Fonts */
+  --primary-font: "Nunito Sans", sans-serif;
 }
 
 body {
-  font-family: "Nunito Sans", sans-serif !important;
+  position: relative;
+  font-family: var(--primary-font);
   padding: 0px;
   margin: 0px;
   background-color: var(--bg_body);
+}
+
+.dark {
+  /* Colors */
+  --brand-primary: #0768ac;
+  --brand-secondary: #03c180;
+  --bg_default: #1a1a1a;
+  --bg_body: #282828;
+  --lines-color: #000000;
+  --body-text: #ededed;
+  --white: #1a1a1a;
+  --top-paragraph-color: #ffffff;
+  --author-color: #aaaaaa;
+  --grey-border-color: #000000;
+  --heart-color: #dc143c;
+
+  /* Box-Shadow */
+  --box-shadow: rgba(6, 6, 7, 0.2) 0px 2px 5px 0px;
+
+  /* Borders */
+  --favourite-topic-border: none;
 }
 
 .container {
@@ -36,11 +58,16 @@ body {
 }
 
 .box-shadow {
-  box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
+  box-shadow: var(--box-shadow);
 }
 
 .rounded {
   border-radius: 10px;
+}
+.text-overflow {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .navbar {
@@ -52,21 +79,23 @@ body {
 .navTitle {
   color: var(--brand-primary);
   font-size: 18px;
+  margin: 1rem 0rem 1rem 0rem;
+  text-decoration: none;
 }
 
 .navList {
   display: flex;
   justify-content: space-between;
 }
-.navList .icon {
+.navButtonIcon {
   color: var(--body-text);
   --ionicon-stroke-width: 40px;
   padding: 0px 4px;
 }
-.navList a {
-  color: var(--dark-lines-color);
+.navListButton {
+  color: var(--body-text);
   text-decoration: none;
-  border: 1px solid var(--grey-border-color);
+  border: 2px solid var(--grey-border-color);
   padding: 5px 7px;
   border-radius: 5px;
   display: flex;
@@ -90,15 +119,15 @@ body {
   margin-top: 4rem;
 }
 .top h2,
-.top p {
+.topP {
   margin: 0px;
 }
 .top h2 {
   color: var(--brand-secondary);
 }
-.top p {
+.topP {
   font-size: 18px;
-  color: #333333;
+  color: var(--top-paragraph-color);
 }
 
 .inputSection {
@@ -108,51 +137,60 @@ body {
   display: flex;
   height: 3.5rem;
   background-color: var(--white);
+  color: var(--body-text);
 }
-.searchInput {
+.searchSection {
   width: 70%;
   display: flex;
   justify-content: center;
   padding-left: 2.3rem;
 }
-.searchInput input {
+.inputField {
   width: 100%;
-  border: none;
+  font-size: 16px;
+  font-family: var(--primary-font);
+  outline: none;
   border: 1px solid var(--grey-border-color);
   border-top: none;
   border-bottom: none;
   border-left: none;
-  font-size: 16px;
-  font-family: "Nunito Sans", sans-serif;
-  outline: none;
+  background-color: var(--white);
+  color: --;
 }
 .searchIcon {
   font-size: 20px;
   position: absolute;
   align-self: center;
-  left: 12px;
+  left: 11px;
   color: var(--body-text);
 }
-#sortInput {
-  border: 1px solid #bababa;
+.selectsContainer {
+  display: flex;
+  width: 40%;
+}
+.sortInput {
+  border: 1px solid var(--grey-border-color);
   border-top: none;
   border-bottom: none;
   border-left: none;
+  width: 100%;
 }
-.inputSection .selectInput {
+.selectsContainer .selectInput {
   padding: 0.2rem 0.5rem;
-  width: 30%;
+  width: 100%;
 }
-.inputSection .selectInput select {
+.styled-select {
   border: none;
   width: 100%;
-  font-family: "Nunito Sans", sans-serif;
+  font-family: var(--primary-font);
   outline: none;
   font-weight: 500;
   font-size: 16px;
+  background-color: var(--white);
+  color: var(--body-text);
 }
 
-.inputSection label {
+.selectsContainer label {
   font-size: 13px;
   padding-left: 4px;
 }
@@ -178,6 +216,7 @@ body {
   border-top-left-radius: 10px;
   width: 100%;
   height: 150px;
+  background-color: var(--white);
 }
 
 .topicDescription {
@@ -190,15 +229,45 @@ body {
 
 .topicTitle {
   margin: 0px;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
-.topicDescription .author {
-  color: #5d5d5d;
+.author {
+  color: var(--author-color);
   font-size: 14px;
   margin: 0px;
 }
+
+.favouratesSection {
+  position: sticky;
+  color: var(--body-text);
+  background-color: var(--white);
+  bottom: 0px;
+}
+.favouratesTitle {
+  margin: 0.4rem 0rem;
+}
+
+.favouriteTopicsContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
+  gap: 15px;
+  padding-bottom: 0.5rem;
+}
+
+.favouriteTopic {
+  max-width: 9rem;
+  border: var(--favourite-topic-border);
+}
+.favouriteTopicImg {
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+}
+.favouriteTopicTitle {
+  margin: 0px;
+  padding: 0rem 0.5rem;
+  padding-bottom: 0.3rem;
+}
+
 @media (max-width: 720px) {
   .top {
     background-image: url("./assets/mobile-top-background.svg");
@@ -208,44 +277,47 @@ body {
   .container {
     padding: 0.3rem 1rem;
   }
-
   .top {
     height: 8rem;
   }
-
   .topText {
     margin-top: 2rem;
   }
   .top h2 {
     font-size: 20px;
   }
-  .top p {
+  .topP {
     font-size: 15px;
   }
-
   .inputSection {
     flex-wrap: wrap;
     height: fit-content;
   }
-  .searchInput {
+  .searchSection {
     width: 100%;
     border-bottom: 1px solid var(--grey-border-color);
   }
-  .searchInput input {
+  .searchSection .inputField {
     width: 100%;
     height: 3rem;
     border-top-right-radius: 10px;
-    border-right: none;
+    border: none;
   }
-  .inputSection .selectInput {
-    padding: 0.2rem 0.6rem;
-    width: 50%;
+  .selectsContainer {
+    width: 100%;
   }
-
+  .selectsContainer .selectInput {
+    padding: 0.4rem 0.8rem;
+    padding-bottom: 0.7rem;
+  }
   .topic {
     max-width: 100%;
   }
   .topic img {
     height: 200px;
   }
+}
+
+.hide {
+  display: none;
 }
