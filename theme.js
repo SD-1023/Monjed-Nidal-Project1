@@ -21,14 +21,6 @@ darkModeButton.addEventListener("click", () => {
 
 if (localStorage.getItem("theme") === "dark") {
   setDarkTheme();
+} else {
+  localStorage.setItem("theme", "light");
 }
-
-// localStorage.setItem(
-//   "theme",
-//   localStorage.getItem("theme") === "dark" ? "dark" : "light"
-// );
-
-// if (localStorage.getItem("theme") === "light") {
-// }
-
-// darkModeButton.addEventListener("click", themeToggle);
