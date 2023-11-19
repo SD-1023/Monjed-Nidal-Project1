@@ -15,15 +15,15 @@
 
   --grey: #666666;
   /* Dark Mode */
-
-  --brand-primary: #0768ac;
-  --brand-secondary: #048f5e;
   --dark-bg_default: #1a1a1a;
   --dark-bg_body: #282828;
   --dark-lines-color: #000000;
   --dark-body-text: #ededed;
   --dark-author-text: #aaaaaa;
-  --heart-color: #dc143c;
+
+  --favourite-topic-border: 1px solid var(--grey-border-color);
+  /* Box-Shadow */
+  --box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
 }
 
 body {
@@ -35,6 +35,7 @@ body {
   --body-text: #ededed;
   --box-shadow: rgba(6, 6, 7, 0.2) 0px 2px 5px 0px;
   --bg_body: #282828;
+  --favourite-topic-border: none;
 }
 
 .navbar,
@@ -68,11 +69,13 @@ body {
 }
 .info {
   padding-right: 1.2rem;
+  height: fit-content;
+  padding-bottom: 2rem;
 }
-.info p {
+.topicDescription {
   font-size: 17px;
 }
-.info span {
+.topicCategory {
   color: var(--brand-secondary);
   font-size: 17px;
 }
@@ -86,9 +89,12 @@ aside {
   background-color: var(--white-static);
   height: fit-content;
   border: 2px solid #ffffff;
+  z-index: 10;
+  box-shadow: var(--box-shadow);
 }
-aside img {
+.topicImg {
   width: 300px;
+  height: 170px;
 }
 
 .asideInfo {
@@ -110,14 +116,14 @@ aside img {
 }
 .addToFavButton {
   font-size: 19px;
-  text-decoration: none;
   color: var(--white);
   background-color: var(--brand-secondary);
   padding: 0.7rem 1rem;
-  text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  border: none;
 }
 .addToFavButton .icon {
   font-size: 30px;
@@ -133,6 +139,7 @@ aside img {
 .subTopicsContainer {
   display: flex;
   color: var(--body-text);
+  margin-bottom: 1rem;
 }
 .subTopics {
   margin-top: 2rem;
@@ -150,14 +157,14 @@ aside img {
   list-style-type: none;
   padding-left: 0rem;
 }
-.subTopicsList li {
+.subTopicsListItem {
   padding: 1rem 2rem;
   font-size: 17px;
   border-bottom: 1px solid var(--grey-border-color);
   display: flex;
   align-items: center;
 }
-.subTopicsList li:last-child {
+.subTopicsListItem:last-child {
   border-bottom: none;
 }
 .checkmarkIcon {
@@ -167,5 +174,5 @@ aside img {
 }
 .filler {
   width: 325px;
-  height: 200px;
+  height: 10px;
 }

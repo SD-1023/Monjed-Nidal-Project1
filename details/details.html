@@ -35,27 +35,23 @@
       <section class="infoSection">
         <div class="infoContainer">
           <div class="info">
-            <span class="">Web Development Languages</span>
-            <h2 class="language">HTML</h2>
-            <p>
-              HTML (Hypertext Markup Language) is the standard markup language
-              for creating web pages and other information that can be displayed
-              in a web browser. It provides a structure for content and defines
-              how it should be displayed on a web page, including text, images ,
-              and multimedia. HTML is essential for creating static web pages
-              and is a foundational technology for the World Wide Web.
-            </p>
+            <span class="topicCategory"></span>
+            <h2 class="language"></h2>
+            <p class="topicDescription"></p>
           </div>
           <aside class="box-shadow">
-            <img src="../assets/images/javascript.jpg" alt="" />
+            <img class="topicImg" src="" alt="" />
             <div class="asideInfo">
-              <p><b>HTML</b> by <a class="devName" href="#">Sarah Smith</a></p>
+              <p>
+                <b class="asideLanguage">HTML</b> by
+                <a class="devName" href="#">Sarah Smith</a>
+              </p>
               <div class="addToFavourites">
                 <p>Interested about this topic?</p>
-                <a class="addToFavButton" href="#"
-                  >Add to Favoutites
-                  <ion-icon class="icon" name="heart-outline"></ion-icon
-                ></a>
+                <button class="addToFavButton" href="#">
+                  Add to Favoutites
+                  <ion-icon class="icon" name="heart-outline"></ion-icon>
+                </button>
                 <small class="unlimitedCreds">Unlimited Credits</small>
               </div>
             </div>
@@ -65,85 +61,11 @@
       <section class="subTopicsContainer">
         <div class="subTopics box-shadow rounded">
           <h2 class="subTopicsTitle">HTML Sub Topics</h2>
-          <ul class="subTopicsList">
-            <li>
-              <ion-icon
-                class="checkmarkIcon"
-                name="checkmark-circle-outline"
-              ></ion-icon
-              >Lorem ipsum dolor sit amet consectetur.
-            </li>
-            <li>
-              <ion-icon
-                class="checkmarkIcon"
-                name="checkmark-circle-outline"
-              ></ion-icon
-              >Lorem ipsum dolor sit amet consectetur.
-            </li>
-            <li>
-              <ion-icon
-                class="checkmarkIcon"
-                name="checkmark-circle-outline"
-              ></ion-icon
-              >Lorem ipsum dolor sit amet consectetur.
-            </li>
-            <li>
-              <ion-icon
-                class="checkmarkIcon"
-                name="checkmark-circle-outline"
-              ></ion-icon
-              >Lorem ipsum dolor sit amet consectetur.
-            </li>
-            <li>
-              <ion-icon
-                class="checkmarkIcon"
-                name="checkmark-circle-outline"
-              ></ion-icon
-              >Lorem ipsum dolor sit amet consectetur.
-            </li>
-          </ul>
+          <ul class="subTopicsList"></ul>
         </div>
         <div class="filler"></div>
       </section>
     </main>
-    <section class="favouratesSection hide container box-shadow">
-      <h3 class="favouratesTitle">My Favourite Topics</h3>
-      <div class="favouriteTopicsContainer">
-        <div class="favouriteTopic rounded box-shadow">
-          <img
-            class="favouriteTopicImg"
-            src="/assets/images/react.webp"
-            alt="React"
-          />
-          <h4 class="favouriteTopicTitle text-overflow">React</h4>
-        </div>
-        <div class="favouriteTopic rounded box-shadow">
-          <img
-            class="favouriteTopicImg"
-            src="/assets/images/react.webp"
-            alt="React"
-          />
-          <h4 class="favouriteTopicTitle">React</h4>
-        </div>
-        <div class="favouriteTopic rounded box-shadow">
-          <img
-            class="favouriteTopicImg"
-            src="/assets/images/react.webp"
-            alt="React"
-          />
-          <h4 class="favouriteTopicTitle">React</h4>
-        </div>
-        <div class="favouriteTopic rounded box-shadow">
-          <img
-            class="favouriteTopicImg"
-            src="/assets/images/react.webp"
-            alt="React"
-          />
-          <h4 class="favouriteTopicTitle">React</h4>
-        </div>
-      </div>
-    </section>
-
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -152,9 +74,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
+    <script src="../favoirites.js"></script>
     <script src="./details.js"></script>
     <script src="../navbar.js"></script>
-    <script src="../favoirites.js"></script>
     <script src="./detailsTheme.js"></script>
   </body>
 </html>
