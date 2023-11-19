@@ -1,0 +1,53 @@
+@media (min-width: 1440px) {
+  .info {
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 1010px) {
+  .infoSection {
+    height: 16.5rem;
+  }
+  .infoContainer {
+    max-width: 720px;
+    margin: 0rem 2rem;
+  }
+  .subTopics {
+    width: 390px;
+  }
+  .subTopicsList li {
+    padding: 0.5rem 2rem;
+  }
+}
+
+@media (max-width: 770px) {
+  .infoSection {
+    height: fit-content;
+  }
+  .info p {
+    font-size: 16px;
+  }
+  .filler {
+    display: none;
+  }
+  .subTopicsContainer {
+    width: 100%;
+  }
+  .subTopics {
+    width: 100%;
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 632px) {
+  .top {
+    text-align: center;
+  }
+  .infoContainer {
+    flex-direction: column;
+  }
+
+  aside img {
+    width: 100%;
+  }
+}
