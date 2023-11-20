@@ -1,54 +1,23 @@
-// body = document.body;
-
-// const favouratesSection = document.createElement("section");
-// favouratesSection.innerHTML = `
-// <h3 class="favouratesTitle">My Favourite Topics</h3>
-// <div class="favouriteTopicsList">
-// </div>`;
-// favouratesSection.className = "favouratesSection hide container box-shadow";
-
-// body.appendChild(favouratesSection);
-// const favouriteTopicsList = document.querySelector("favouriteTopicsList");
-
-// favouratesButton = document.querySelectorAll(".navListButton")[1];
-// const showFavouriteSection = () => {
-//   favouratesSection.classList.toggle("hide");
-// };
-// favouratesButton.addEventListener("click", showFavouriteSection);
-
-// const addTopicToFavourites = (topic) => {
-//   const newDiv = document.createElement("div");
-//   newDiv.className = "favouriteTopic rounded box-shadow";
-//   newDiv.innerHTML = `
-//   <img
-//   class="favouriteTopicImg"
-//   src="${topic.imgSource}"
-//   alt="${topic.language}"
-//   />
-//   <h4 class="favouriteTopicTitle text-overflow">${topic.language}</h4>`;
-//   localStorage.setItem(
-//     "favourites",
-//     JSON.stringify([...JSON.parse(localStorage.getItem("favourites")), topic])
-//   );
-//   console.log(JSON.parse(localStorage.getItem("favourites")));
-// };
-body = document.body;
-
-const favouritesSection = document.createElement("section");
-favouritesSection.innerHTML = `
-  <h3 class="favouritesTitle">My Favourite Topics</h3>
-  <div class="favouriteTopicsList">
-  </div>`;
-favouritesSection.className = "favouritesSection hide container box-shadow";
-
-body.appendChild(favouritesSection);
-const favouriteTopicsList = document.querySelector(".favouriteTopicsList");
-
+const body = document.body;
 favouritesButton = document.querySelectorAll(".navListButton")[1];
+const favouritesSection = document.createElement("section");
+const favouriteTopicsList = document.createElement("section");
+
 const showFavouriteSection = () => {
+  console.log("gg");
   favouritesSection.classList.toggle("hide");
 };
-favouritesButton.addEventListener("click", showFavouriteSection);
+
+window.addEventListener("load", () => {
+  favouritesSection.className = "favouritesSection hide container box-shadow";
+  favouritesButton.addEventListener("click", showFavouriteSection);
+});
+favouritesSection.innerHTML = `
+<h3 class="favouritesTitle">My Favourite Topics</h3>
+`;
+favouriteTopicsList.classList.add("favouriteTopicsList");
+favouritesSection.appendChild(favouriteTopicsList);
+body.appendChild(favouritesSection);
 
 const addTopicToFavourites = (topic) => {
   const newDiv = document.createElement("div");
@@ -68,12 +37,14 @@ const saveTopic = (topic) => {
   const isTopicExists = existingFavourites.some(
     (existingTopic) => existingTopic.language === topic.language
   );
-
+  console.log(isTopicExists);
   if (!isTopicExists) {
     existingFavourites.push(topic);
     localStorage.setItem("favourites", JSON.stringify(existingFavourites));
     showFavouriteSection();
+    return true;
   }
+  return false;
 };
 if (JSON.parse(localStorage.getItem("favourites"))) {
   let favArray = JSON.parse(localStorage.getItem("favourites"));
@@ -83,3 +54,4 @@ if (JSON.parse(localStorage.getItem("favourites"))) {
 } else {
   favouritesSection.style.display = "none";
 }
+// localStorage.clear();

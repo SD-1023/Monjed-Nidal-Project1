@@ -125,6 +125,10 @@ aside {
   cursor: pointer;
   border: none;
 }
+.addToFavButton:hover {
+  box-shadow: var(--box-shadow);
+  background-color: #06b276;
+}
 .addToFavButton .icon {
   font-size: 30px;
   padding: 0rem 0.5rem;

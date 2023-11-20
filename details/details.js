@@ -30,10 +30,10 @@ selectedTopic.supTopics.forEach((sup) => {
 });
 
 addToFavButton.addEventListener("click", () => {
-  addTopicToFavourites(selectedTopic);
-  saveTopic(selectedTopic);
+  if (saveTopic(selectedTopic)) {
+    addTopicToFavourites(selectedTopic);
+  }
 });
-
 // infoContainer.innerHTML = `
 // <span class="">${selectedTopic.title}</span>
 // <h2 class="language">${selectedTopic.language}</h2>
