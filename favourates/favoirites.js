@@ -4,13 +4,18 @@ const favouritesSection = document.createElement("section");
 const favouriteTopicsList = document.createElement("ul");
 
 const showFavouriteSection = () => {
-  console.log("gg");
   favouritesSection.classList.toggle("hide");
 };
 
 window.addEventListener("load", () => {
   favouritesSection.className = "favouritesSection hide container box-shadow";
-  favouritesButton.addEventListener("click", showFavouriteSection);
+  favouritesButton.addEventListener("click", () => {
+    const existingFavourites =
+      JSON.parse(localStorage.getItem("favourites")) || [];
+    if (existingFavourites[0]) {
+      showFavouriteSection();
+    }
+  });
 });
 favouritesSection.innerHTML = `
 <h3 class="favouritesTitle">My Favourite Topics</h3>
@@ -59,7 +64,6 @@ const renderFavouriteTopics = () => {
     addTopicToFavourites(topic);
   });
 
-  // Show or hide the favorites section based on whether there are favorites
   favouritesSection.style.display =
     existingFavourites.length > 0 ? "block" : "none";
 };
