@@ -26,6 +26,8 @@ selectedTopic.supTopics.forEach((sup) => {
       </ion-icon>${sup}
     `;
   li.classList.add("subTopicsListItem");
+  li.classList.add("d-flex");
+  li.classList.add("align-center");
   subTopicsList.appendChild(li);
 });
 

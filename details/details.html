@@ -4,25 +4,29 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Details</title>
-    <link rel="stylesheet" href="../styles.css" />
-    <link rel="stylesheet" href="./css/details.css" />
-    <link rel="stylesheet" href="./css/detailsMediaQueries.css" />
+    <link rel="stylesheet" href="/css/constants.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/favourates.css" />
+    <link rel="stylesheet" href="/css/details.css" />
+    <link rel="stylesheet" href="/css/detailsMediaQueries.css" />
   </head>
   <body>
-    <header class="navbar container box-shadow">
-      <a class="navTitle" href="/index.html">Web Topics</a>
-      <div class="navList">
-        <a class="navListButton" href="#"
+    <header
+      class="navbar d-flex justify-between align-center container box-shadow"
+    >
+      <a class="navTitle decoration-none" href="/index.html">Web Topics</a>
+      <div class="navList d-flex justify-between">
+        <a class="navListButton d-flex align-center decoration-none" href="#"
           ><ion-icon class="navButtonIcon icon" name="moon-outline"></ion-icon
           ><span class="navButtonText"></span
         ></a>
-        <a class="navListButton" href="#"
+        <a class="navListButton d-flex align-center decoration-none" href="#"
           ><ion-icon class="navButtonIcon icon" name="heart-outline"></ion-icon
           ><span class="navButtonText"></span
         ></a>
       </div>
     </header>
-    <section class="top">
+    <section class="top d-flex justify-center">
       <div class="topText container">
         <h2>Welcome to our website!</h2>
         <p class="topP">
@@ -31,9 +35,12 @@
       </div>
     </section>
 
-    <main class="detailsContainer" id="detailsContainer">
-      <section class="infoSection">
-        <div class="infoContainer">
+    <main
+      class="detailsContainer d-flex justify-center align-center"
+      id="detailsContainer"
+    >
+      <section class="infoSection d-flex justify-center">
+        <div class="infoContainer d-flex">
           <div class="info">
             <span class="topicCategory"></span>
             <h2 class="language"></h2>
@@ -46,9 +53,12 @@
                 <b class="asideLanguage">HTML</b> by
                 <a class="devName" href="#">Sarah Smith</a>
               </p>
-              <div class="addToFavourites">
+              <div class="addToFavourites d-flex">
                 <p>Interested about this topic?</p>
-                <button class="addToFavButton" href="#">
+                <button
+                  class="addToFavButton d-flex justify-center align-center"
+                  href="#"
+                >
                   Add to Favoutites
                   <ion-icon class="icon" name="heart-outline"></ion-icon>
                 </button>
@@ -58,13 +68,19 @@
           </aside>
         </div>
       </section>
-      <section class="subTopicsContainer">
+      <section class="subTopicsContainer d-flex">
         <div class="subTopics box-shadow rounded">
           <h2 class="subTopicsTitle">HTML Sub Topics</h2>
           <ul class="subTopicsList"></ul>
         </div>
         <div class="filler"></div>
       </section>
+      <footer>
+        <p class="d-flex align-center justify-center">
+          Developed with
+          <ion-icon class="filledHeart" name="heart"></ion-icon> © 2023
+        </p>
+      </footer>
     </main>
     <script
       type="module"
@@ -74,9 +90,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="../favoirites.js"></script>
+    <script src="/favourates/favoirites.js"></script>
     <script src="./details.js"></script>
-    <script src="../navbar.js"></script>
+    <script src="/navbar/navbar.js"></script>
     <script src="./detailsTheme.js"></script>
   </body>
 </html>

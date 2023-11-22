@@ -1,5 +1,5 @@
 const topicsContainer = document.getElementById("topicsContainer");
-const detailsContainer = document.getElementById("detailsContainer");
+const inputField = document.querySelector(".inputField");
 
 let topicsData = [
   {
@@ -164,27 +164,43 @@ let topicsData = [
   },
 ];
 
-function renderTopics() {
-  topicsData.forEach((topic) => {
+function renderTopics(filteredTopics) {
+  topicsContainer.innerHTML = "";
+
+  filteredTopics.forEach((topic) => {
     const topicCard = document.createElement("a");
     topicCard.href = "/details/details.html";
-    topicCard.className = "topic box-shadow rounded";
+    topicCard.className = "topic decoration-none box-shadow rounded";
     topicCard.innerHTML = `
-    <img src="${topic.imageSource}" alt="" />
-    <div class="topicInformation">
-      <div>
-        <p class="topicTitle text-overflow">${topic.title}</p>
-        <b class="language">${topic.language}</b>
+      <img src="${topic.imageSource}" alt="${topic.language}" />
+      <div class="topicInformation d-flex justify-between">
+        <div>
+          <p class="topicTitle text-overflow">${topic.title}</p>
+          <b class="language">${topic.language}</b>
+        </div>
+        <p class="author">Author: ${topic.author}</p>
       </div>
-      <p class="author">Author: ${topic.author}</p>
-    </div>
     `;
     topicCard.addEventListener("click", () => showTopicDetails(topic));
     topicsContainer.appendChild(topicCard);
   });
 }
-renderTopics();
+
+function filterTopics(searchTerm) {
+  const filteredTopics = topicsData.filter((topic) =>
+    topic.language.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+  renderTopics(filteredTopics);
+}
+
+inputField.addEventListener("input", (event) => {
+  const searchTerm = event.target.value;
+  console.log("ggggg");
+  filterTopics(searchTerm);
+});
 
 function showTopicDetails(topic) {
   localStorage.setItem("selectedTopic", JSON.stringify(topic));
 }
+
+renderTopics(topicsData);

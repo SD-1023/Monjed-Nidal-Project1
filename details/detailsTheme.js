@@ -1,5 +1,5 @@
+console.log(document);
 const darkModeButton = document.querySelectorAll(".navListButton")[0];
-const body = document.body;
 const theme = window.localStorage.getItem("theme");
 
 const setDarkTheme = () => {

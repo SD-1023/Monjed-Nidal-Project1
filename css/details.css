@@ -1,41 +1,5 @@
-:root {
-  --primary-font: "Nunito Sans", sans-serif;
-  /* Default (Light Mode) */
-  --brand-primary: #0768ac;
-  --brand-secondary: #048f5e;
-  --bg_default: #ffffff;
-  --bg_body: #f0f9ff;
-  --lines-color: #dddddd;
-  --body-text: #333333;
-  --heart-color: #dc143c;
-  --white: #ffffff;
-  --white-static: #ffffff;
-  --grey-border-color: #d6d6d6;
-  --grey-border-color-static: #d6d6d6;
-
-  --grey: #666666;
-  /* Dark Mode */
-  --dark-bg_default: #1a1a1a;
-  --dark-bg_body: #282828;
-  --dark-lines-color: #000000;
-  --dark-body-text: #ededed;
-  --dark-author-text: #aaaaaa;
-
-  --favourite-topic-border: 1px solid var(--grey-border-color);
-  /* Box-Shadow */
-  --box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
-}
-
 body {
   background-color: var(--bg_body);
-}
-.darkDetails {
-  --grey-border-color: #000000;
-  --bg_default: #1a1a1a;
-  --body-text: #ededed;
-  --box-shadow: rgba(6, 6, 7, 0.2) 0px 2px 5px 0px;
-  --bg_body: #282828;
-  --favourite-topic-border: none;
 }
 
 .navbar,
@@ -48,10 +12,7 @@ body {
 }
 
 .detailsContainer {
-  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
 }
 
 .infoSection {
@@ -60,12 +21,9 @@ body {
   color: #ffffff;
   height: 13rem;
   padding: 1.5rem 0rem;
-  display: flex;
-  justify-content: center;
 }
 .infoContainer {
   max-width: 920px;
-  display: flex;
 }
 .info {
   padding-right: 1.2rem;
@@ -85,7 +43,7 @@ body {
 }
 
 aside {
-  color: #ffffff;
+  color: #333333;
   background-color: var(--white-static);
   height: fit-content;
   border: 2px solid #ffffff;
@@ -109,7 +67,6 @@ aside {
   color: var(--brand-primary);
 }
 .addToFavourites {
-  display: flex;
   flex-direction: column;
   padding: 0.5rem 1rem;
   border: 1px solid var(--grey-border-color-static);
@@ -119,9 +76,6 @@ aside {
   color: var(--white);
   background-color: var(--brand-secondary);
   padding: 0.7rem 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   cursor: pointer;
   border: none;
 }
@@ -141,9 +95,7 @@ aside {
 }
 
 .subTopicsContainer {
-  display: flex;
   color: var(--body-text);
-  margin-bottom: 1rem;
 }
 .subTopics {
   margin-top: 2rem;
@@ -165,8 +117,6 @@ aside {
   padding: 1rem 2rem;
   font-size: 17px;
   border-bottom: 1px solid var(--grey-border-color);
-  display: flex;
-  align-items: center;
 }
 .subTopicsListItem:last-child {
   border-bottom: none;

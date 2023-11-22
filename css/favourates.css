@@ -1,0 +1,47 @@
+.favouritesSection {
+  z-index: 100;
+  position: sticky;
+  color: var(--body-text);
+  background-color: var(--bg_default);
+  bottom: 0px;
+}
+.favouratesTitle {
+  margin: 0.4rem 0rem;
+}
+
+.favouriteTopicsList {
+  padding: 0px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
+  gap: 15px;
+  padding-bottom: 0.5rem;
+}
+
+.favouriteTopic {
+  position: relative;
+  max-width: 9rem;
+  border: var(--favourite-topic-border);
+}
+.favouriteTopicImg {
+  background-color: #ffffff;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  width: 100%;
+  height: 75px;
+}
+.favouriteTopicInfo {
+  padding: 0rem 0.5rem;
+  padding-bottom: 0.3rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.removeIcon {
+  font-size: 18px;
+}
+.removeIcon:hover {
+  cursor: pointer;
+}
+.favouriteTopicTitle {
+  margin: 0px;
+}

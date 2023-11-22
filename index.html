@@ -4,23 +4,27 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project 1</title>
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="/css/constants.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+    <link rel="stylesheet" href="/css/favourates.css" />
   </head>
   <body>
-    <header class="navbar container box-shadow">
-      <a href="/index.html" class="navTitle">Web Topics</a>
-      <div class="navList">
-        <a class="navListButton" href="#"
+    <header
+      class="navbar d-flex justify-between align-center container box-shadow"
+    >
+      <a href="/index.html" class="navTitle decoration-none">Web Topics</a>
+      <div class="navList d-flex justify-between">
+        <a class="navListButton d-flex align-center decoration-none" href="#"
           ><ion-icon class="navButtonIcon icon" name="moon-outline"></ion-icon
           ><span class="navButtonText"></span
         ></a>
-        <a class="navListButton" href="#"
+        <a class="navListButton d-flex align-center decoration-none" href="#"
           ><ion-icon class="navButtonIcon icon" name="heart-outline"></ion-icon
           ><span class="navButtonText"></span
         ></a>
       </div>
     </header>
-    <section class="top">
+    <section class="top d-flex justify-center">
       <div class="topText container">
         <h2>Welcome to our website!</h2>
         <p class="topP">
@@ -29,8 +33,8 @@
       </div>
     </section>
     <section class="container">
-      <form class="inputSection box-shadow rounded">
-        <div class="searchSection">
+      <form class="inputSection d-flex box-shadow rounded">
+        <div class="searchSection d-flex justify-center">
           <ion-icon class="searchIcon icon" name="search-outline"></ion-icon>
           <input
             class="inputField"
@@ -39,20 +43,19 @@
           />
         </div>
 
-        <div class="selectsContainer">
+        <div class="selectsContainer d-flex">
           <div class="selectInput sortInput">
             <label for="sortSelect" class="sortTitle">Sort by:</label>
             <select class="styled-select" name="sort" id="sortSelect">
-              <option value="default" selected hidden>Default</option>
-              <option value="default">Default</option>
-              <option value="default">Default</option>
-              <option value="default">Default</option>
+              <option value="default" selected>Default</option>
+              <option value="Language">Language</option>
             </select>
           </div>
           <div class="selectInput" id="filterInput">
             <label class="filterTitle">Filter by:</label>
             <select class="styled-select" name="filter" id="filterSelect">
               <option value="default" selected hidden>Default</option>
+              <option value="default">Default</option>
             </select>
           </div>
         </div>
@@ -60,6 +63,13 @@
     </section>
     <h2 class="topicsTitle container">"24" Web Topics Found</h2>
     <section class="topics container" id="topicsContainer"></section>
+
+    <footer>
+      <p class="d-flex align-center justify-center">
+        Developed with <ion-icon class="filledHeart" name="heart"></ion-icon> ©
+        2023
+      </p>
+    </footer>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -68,9 +78,9 @@
       nomodule
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
     ></script>
-    <script src="app.js"></script>
-    <script src="navbar.js"></script>
-    <script src="favoirites.js"></script>
+    <script type="module" src="app.js"></script>
+    <script src="/navbar/navbar.js"></script>
+    <script src="/favourates/favoirites.js"></script>
     <script src="theme.js"></script>
   </body>
 </html>
