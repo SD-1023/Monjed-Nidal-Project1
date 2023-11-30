@@ -176,9 +176,9 @@ function renderTopics(filteredTopics) {
       <div class="topicInformation d-flex justify-between">
         <div>
           <p class="topicTitle text-overflow">${topic.title}</p>
-          <b class="language">${topic.language}</b>
+          <b class="language text-overflow">${topic.language}</b>
         </div>
-        <p class="author">Author: ${topic.author}</p>
+        <p class="author text-overflow">Author: ${topic.author}</p>
       </div>
     `;
     topicCard.addEventListener("click", () => showTopicDetails(topic));
@@ -195,7 +195,6 @@ function filterTopics(searchTerm) {
 
 inputField.addEventListener("input", (event) => {
   const searchTerm = event.target.value;
-  console.log("ggggg");
   filterTopics(searchTerm);
 });
 
