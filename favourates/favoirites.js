@@ -29,7 +29,7 @@ const addTopicToFavourites = (topic) => {
   newDiv.innerHTML = `
     <img
       class="favouriteTopicImg"
-      src="${topic.imageSource}"
+      src="..${topic.imageSource}"
       alt="${topic.language}"
     />
     <div class="favouriteTopicInfo">
