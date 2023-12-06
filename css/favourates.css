@@ -7,7 +7,6 @@
 }
 .favouratesTitle {
   margin: 0.4rem 0rem;
-  flex-grow: 0;
 }
 
 .favouriteTopicsList {
@@ -35,6 +34,9 @@
   justify-content: space-between;
   align-items: center;
 }
+.test1 {
+  flex-grow: 0;
+}
 .favouriteTopicStars {
   margin: 0px;
   font-size: 18px;
@@ -47,5 +49,6 @@
   cursor: pointer;
 }
 .favouriteTopicTitle {
+  max-width: 6rem;
   margin: 0px;
 }

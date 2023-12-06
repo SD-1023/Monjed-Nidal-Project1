@@ -149,6 +149,7 @@ body {
   margin: 0px;
 }
 .language {
+  font-weight: 700;
   margin-block: 0rem 0.5rem;
   font-size: 1.1rem;
 }
@@ -178,7 +179,11 @@ footer {
   font-size: 22px;
   color: var(--heart-color);
 }
-
+@media (min-width: 1700px) {
+  .top {
+    background-size: cover;
+  }
+}
 @media (max-width: 720px) {
   .top {
     background-image: url("/assets/mobile-top-background.svg");

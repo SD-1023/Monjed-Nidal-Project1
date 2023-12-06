@@ -1,6 +1,8 @@
 const topicsContainer = document.getElementById("topicsContainer");
 const inputField = document.querySelector(".inputField");
 const topicsCounter = document.querySelector("#topicsCounter");
+const sortSelect = document.querySelector("#sortSelect");
+const filterSelect = document.querySelector("#filterSelect");
 let topicsData = [];
 
 async function fetchTopicsData() {
@@ -11,23 +13,22 @@ async function fetchTopicsData() {
     })
     .catch((error) => console.error("Error fetching topics data:", error));
 }
-await fetchTopicsData();
 
-async function renderTopics(filteredTopics) {
+function renderTopics(filteredTopics) {
   topicsContainer.innerHTML = "";
   topicsCounter.innerHTML = filteredTopics
     ? `"${filteredTopics.length}"`
     : `No`;
   filteredTopics.forEach((topic) => {
     const topicCard = document.createElement("a");
-    topicCard.href = "/details/details.html";
+    topicCard.href = `details/details.html`;
     topicCard.className = "topic decoration-none box-shadow rounded";
     topicCard.innerHTML = `
       <img src="${topic.imageSource}" alt="${topic.language}" />
       <div class="topicInformation d-flex justify-between">
         <div>
           <p class="topicTitle text-overflow">${topic.title}</p>
-          <p class="language"><b>${topic.language}</b></p>
+          <p class="language">${topic.language}</p>
         </div>
         <div>
           <div class="stars d-flex align-center">
@@ -46,20 +47,23 @@ async function renderTopics(filteredTopics) {
   });
 }
 
-function filterTopics(searchTerm) {
-  const filteredTopics = topicsData.filter((topic) =>
-    topic.language.toLowerCase().includes(searchTerm.toLowerCase())
-  );
+function handleSearch(searchTerm) {
+  let filteredTopics = [];
+  if (searchTerm) {
+    filteredTopics = topicsData.filter((topic) =>
+      topic.language.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }
   renderTopics(filteredTopics);
 }
 
 inputField.addEventListener("input", (event) => {
-  const searchTerm = event.target.value;
-  filterTopics(searchTerm);
+  handleSearch(event.target.value);
 });
 
 function showTopicDetails(topic) {
   localStorage.setItem("selectedTopic", JSON.stringify(topic));
 }
 
+await fetchTopicsData();
 renderTopics(topicsData);

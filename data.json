@@ -1,5 +1,6 @@
 [
     {
+        "id": 1,
         "imageSource": "/assets/images/html.png",
         "title": "Web Development Languages",
         "language": "HTML",
@@ -15,6 +16,7 @@
         ]
     },
     {
+        "id": 2,
         "imageSource": "/assets/images/css.webp",
         "title": "Web Development Languages",
         "language": "CSS",
@@ -30,6 +32,7 @@
         ]
     },
     {
+        "id": 3,
         "imageSource": "/assets/images/javascript.jpg",
         "title": "Web Development Languages",
         "language": "JavaScript",
@@ -45,6 +48,7 @@
         ]
     },
     {
+        "id": 4,
         "imageSource": "/assets/images/jquery.png",
         "title": "Frontend Frameworks and Libraries",
         "language": "jQuery",
@@ -60,6 +64,7 @@
         ]
     },
     {
+        "id": 5,
         "imageSource": "/assets/images/angular.png",
         "title": "Frontend Frameworks and Libraries",
         "language": "Angular",
@@ -75,6 +80,7 @@
         ]
     },
     {
+        "id": 6,
         "imageSource": "/assets/images/react.webp",
         "title": "Frontend Frameworks and Libraries",
         "language": "React",
@@ -90,6 +96,7 @@
         ]
     },
     {
+        "id": 7,
         "imageSource": "/assets/images/vuejs.jpeg",
         "title": "Frontend Frameworks and Libraries",
         "language": "Vue.js",
@@ -105,6 +112,7 @@
         ]
     },
     {
+        "id": 8,
         "imageSource": "/assets/images/nodejs.webp",
         "title": "Backend Frameworks and Libraries",
         "language": "Node.js",
@@ -120,6 +128,7 @@
         ]
     },
     {
+        "id": 9,
         "imageSource": "/assets/images/expressjs.webp",
         "title": "Backend Frameworks and Libraries",
         "language": "Express JS",
@@ -135,6 +144,7 @@
         ]
     },
     {
+        "id": 10,
         "imageSource": "/assets/images/ruby.jpeg",
         "title": "Backend Frameworks and Libraries",
         "language": "Ruby on Rails",
@@ -150,6 +160,7 @@
         ]
     },
     {
+        "id": 11,
         "imageSource": "/assets/images/django.jpeg",
         "title": "Backend Frameworks and Libraries",
         "language": "Django",
@@ -165,6 +176,7 @@
         ]
     },
     {
+        "id": 12,
         "imageSource": "/assets/images/flask.webp",
         "title": "Backend Frameworks and Libraries",
         "language": "Flask",
@@ -180,6 +192,7 @@
         ]
     },
     {
+        "id": 13,
         "imageSource": "/assets/images/sql.png",
         "title": "Databases and APIs",
         "language": "SQL",
