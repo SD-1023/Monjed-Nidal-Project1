@@ -6,7 +6,7 @@ const filterSelect = document.querySelector("#filterSelect");
 let topicsData = [];
 
 async function fetchTopicsData() {
-  await fetch("/data.json")
+  await fetch("./data.json")
     .then((response) => response.json())
     .then((data) => {
       topicsData = data;
