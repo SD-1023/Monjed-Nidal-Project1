@@ -24,7 +24,7 @@ function renderTopics(filteredTopics) {
     topicCard.href = `details/details.html`;
     topicCard.className = "topic decoration-none box-shadow rounded";
     topicCard.innerHTML = `
-      <img src="${topic.imageSource}" alt="${topic.language}" />
+      <img src=".${topic.imageSource}" alt="${topic.language}" />
       <div class="topicInformation d-flex justify-between">
         <div>
           <p class="topicTitle text-overflow">${topic.title}</p>

@@ -31,7 +31,7 @@ body {
 .top {
   flex-direction: column;
   height: 10rem;
-  background-image: url("/assets/desktop-top-background.svg");
+  background-image: url("../assets/desktop-top-background.svg");
   background-repeat: no-repeat;
   background-size: contain;
   background-color: var(--white);
@@ -186,7 +186,7 @@ footer {
 }
 @media (max-width: 720px) {
   .top {
-    background-image: url("/assets/mobile-top-background.svg");
+    background-image: url("../assets/mobile-top-background.svg");
   }
 }
 @media (max-width: 632px) {
