@@ -6,7 +6,7 @@ const filterSelect = document.querySelector("#filterSelect");
 let topicsData = [];
 
 async function fetchTopicsData() {
-  await fetch("./data.json")
+  await fetch("./data/data.json")
     .then((response) => response.json())
     .then((data) => {
       topicsData = data;
@@ -48,12 +48,9 @@ function renderTopics(filteredTopics) {
 }
 
 function handleSearch(searchTerm) {
-  let filteredTopics = [];
-  if (searchTerm) {
-    filteredTopics = topicsData.filter((topic) =>
-      topic.language.toLowerCase().includes(searchTerm.toLowerCase())
-    );
-  }
+  let filteredTopics = topicsData.filter((topic) =>
+    topic.language.toLowerCase().includes(searchTerm.toLowerCase())
+  );
   renderTopics(filteredTopics);
 }
 
