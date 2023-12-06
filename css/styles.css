@@ -124,9 +124,7 @@ body {
   gap: 25px;
 }
 .topic {
-  height: fit-content;
   background-color: var(--white);
-  max-width: 300px;
   color: var(--body-text);
   transition: scale 0.2s ease-in-out;
 }
@@ -143,12 +141,25 @@ body {
 
 .topicInformation {
   padding: 1rem 1rem;
-  height: 7rem;
+  min-height: 7rem;
   flex-direction: column;
 }
 
 .topicTitle {
   margin: 0px;
+}
+.language {
+  margin-block: 0rem 0.5rem;
+  font-size: 1.1rem;
+}
+.stars {
+  margin: 1rem 0rem;
+}
+.star {
+  color: #f4a942;
+}
+.filledStar {
+  fill: #f4a942;
 }
 .author {
   color: var(--author-color);
@@ -213,6 +224,9 @@ footer {
   }
   .topic {
     max-width: 100%;
+  }
+  .topic:hover {
+    scale: 1.01;
   }
   .topic img {
     height: 200px;

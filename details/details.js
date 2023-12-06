@@ -3,10 +3,14 @@ const info = document.querySelector(".info");
 const infoSection = document.querySelector(".infoSection");
 const infoContainer = document.querySelector(".infoContainer");
 const topicCategory = document.querySelector(".topicCategory");
-const language = document.querySelector(".language");
+const language = document.querySelector(".detailsLanguage");
 const asideLanguage = document.querySelector(".asideLanguage");
 const topicDescription = document.querySelector(".topicDescription");
 const topicImg = document.querySelector(".topicImg");
+const subTopicsContainer = document.querySelector(".subTopics");
+const subTopicsTitleLanguage = document.querySelector(
+  ".subTopicsTitleLanguage"
+);
 const subTopicsList = document.querySelector(".subTopicsList");
 const devName = document.querySelector(".devName");
 const addToFavButton = document.querySelector(".addToFavButton");
@@ -18,7 +22,7 @@ asideLanguage.innerText = selectedTopic.language;
 topicDescription.innerText = selectedTopic.description;
 topicImg.src = selectedTopic.imageSource;
 devName.innerText = selectedTopic.author;
-
+subTopicsTitleLanguage.innerText = selectedTopic.language;
 selectedTopic.supTopics.forEach((sup) => {
   const li = document.createElement("li");
   li.innerHTML = `
@@ -36,6 +40,27 @@ addToFavButton.addEventListener("click", () => {
     addTopicToFavourites(selectedTopic);
   }
 });
+
+let leftOffset;
+
+// Function to update leftOffset
+function updateLeftOffset() {
+  leftOffset = info.offsetLeft;
+  subTopicsContainer.style.left = leftOffset + "px";
+  if (window.innerWidth > 1010) {
+    subTopicsContainer.style.width = info.offsetWidth + "px";
+    subTopicsContainer.parentNode.classList.remove("container");
+  } else {
+    subTopicsContainer.parentNode.classList.add("container");
+    subTopicsContainer.style.width = "unset";
+  }
+}
+updateLeftOffset();
+
+window.addEventListener("resize", () => {
+  updateLeftOffset();
+});
+
 // infoContainer.innerHTML = `
 // <span class="">${selectedTopic.title}</span>
 // <h2 class="language">${selectedTopic.language}</h2>

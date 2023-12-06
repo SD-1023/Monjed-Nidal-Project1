@@ -1,4 +1,3 @@
-console.log(document);
 const darkModeButton = document.querySelectorAll(".navListButton")[0];
 const theme = window.localStorage.getItem("theme");
 

@@ -42,45 +42,52 @@
       </div>
     </section>
 
-    <main
-      class="detailsContainer d-flex justify-center align-center"
-      id="detailsContainer"
-    >
-      <section class="infoSection d-flex justify-center">
-        <div class="infoContainer d-flex">
+    <main class="detailsContainer align-center" id="detailsContainer">
+      <section class="infoSection">
+        <div class="infoContainer d-flex container">
           <div class="info">
             <span class="topicCategory"></span>
-            <h2 class="language"></h2>
+            <h2 class="detailsLanguage"></h2>
+            <div class="stars d-flex align-center">
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star"></ion-icon>
+              <ion-icon class="star" name="star-outline"></ion-icon>
+            </div>
             <p class="topicDescription"></p>
           </div>
-          <aside class="box-shadow">
-            <img class="topicImg" src="" alt="" />
-            <div class="asideInfo">
-              <p>
-                <b class="asideLanguage">HTML</b> by
-                <a class="devName" href="#">Sarah Smith</a>
-              </p>
-              <div class="addToFavourites d-flex">
-                <p>Interested about this topic?</p>
-                <button
-                  class="addToFavButton d-flex justify-center align-center"
-                  href="#"
-                >
-                  Add to Favoutites
-                  <ion-icon class="icon" name="heart-outline"></ion-icon>
-                </button>
-                <small class="unlimitedCreds">Unlimited Credits</small>
+          <aside>
+            <div class="test box-shadow">
+              <img class="topicImg" src="" alt="" />
+              <div class="asideInfo">
+                <p>
+                  <b class="asideLanguage">HTML</b> by
+                  <a class="devName" href="#">Sarah Smith</a>
+                </p>
+                <div class="addToFavourites d-flex">
+                  <p>Interested about this topic?</p>
+                  <button
+                    class="addToFavButton d-flex justify-center align-center"
+                    href="#"
+                  >
+                    Add to Favoutites
+                    <ion-icon class="icon" name="heart-outline"></ion-icon>
+                  </button>
+                  <small class="unlimitedCreds">Unlimited Credits</small>
+                </div>
               </div>
             </div>
           </aside>
         </div>
       </section>
-      <section class="subTopicsContainer d-flex">
+      <section class="subTopicsContainer">
         <div class="subTopics box-shadow rounded">
-          <h2 class="subTopicsTitle">HTML Sub Topics</h2>
+          <h2 class="subTopicsTitle">
+            <span class="subTopicsTitleLanguage"></span> Sub Topics
+          </h2>
           <ul class="subTopicsList"></ul>
         </div>
-        <div class="filler"></div>
       </section>
       <footer>
         <p class="d-flex align-center justify-center">

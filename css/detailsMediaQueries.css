@@ -5,15 +5,17 @@
 }
 
 @media (max-width: 1010px) {
-  .infoSection {
-    height: 16.5rem;
+  .info {
+    width: 100%;
   }
-  .infoContainer {
-    max-width: 720px;
-    margin: 0rem 2rem;
+
+  .test {
+    position: static;
   }
   .subTopics {
-    width: 390px;
+    position: static;
+    /* margin: 1.5rem 1rem; */
+    width: unset;
   }
   .subTopicsListItem {
     padding: 0.8rem 2rem;
@@ -21,40 +23,32 @@
 }
 
 @media (max-width: 770px) {
-  .infoSection {
-    height: fit-content;
+  .container {
+    padding: 0.3rem 2rem;
+  }
+  .info {
+    width: 100%;
+    padding-bottom: 1.5rem;
   }
   .info p {
     font-size: 16px;
   }
-  .filler {
-    display: none;
-  }
-  .subTopicsContainer {
-    width: 100%;
-  }
-  .subTopics {
-    width: 100%;
-    margin: 2rem;
-  }
 }
 
 @media (max-width: 632px) {
+  .container {
+    padding: 0.3rem 1rem;
+  }
   .top {
     text-align: center;
   }
   .infoContainer {
-    margin: 0rem 1rem;
-  }
-  .infoContainer {
     flex-direction: column;
   }
-  .subTopics {
-    margin: 1rem;
-  }
+
   .topicImg {
     width: 100%;
-    height: 200px;
+    height: 250px;
   }
   .subTopicsListItem {
     padding: 0.8rem 1.2rem;

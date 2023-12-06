@@ -33,9 +33,19 @@ const addTopicToFavourites = (topic) => {
       alt="${topic.language}"
     />
     <div class="favouriteTopicInfo">
+    <div>
       <h4 class="favouriteTopicTitle text-overflow">${topic.language}</h4>
+      <div class="stars favouriteTopicStars d-flex align-center">
+      <ion-icon class="star" name="star"></ion-icon>
+      <ion-icon class="star" name="star"></ion-icon>
+      <ion-icon class="star" name="star"></ion-icon>
+      <ion-icon class="star" name="star"></ion-icon>
+      <ion-icon class="star" name="star-outline"></ion-icon>
+    </div>
+    </div>
       <ion-icon class="removeIcon" name="heart-dislike-outline"></ion-icon>
     </div>
+    
     `;
   newDiv.className = "favouriteTopic rounded box-shadow";
   favouriteTopicsList.appendChild(newDiv);
@@ -46,7 +56,6 @@ const saveTopic = (topic) => {
   const isTopicExists = existingFavourites.some(
     (existingTopic) => existingTopic.language === topic.language
   );
-  console.log(isTopicExists);
   if (!isTopicExists) {
     existingFavourites.push(topic);
     localStorage.setItem("favourites", JSON.stringify(existingFavourites));
@@ -64,8 +73,9 @@ const renderFavouriteTopics = () => {
     addTopicToFavourites(topic);
   });
 
-  favouritesSection.style.display =
-    existingFavourites.length > 0 ? "block" : "none";
+  if (existingFavourites.length === 0) {
+    favouritesSection.classList.toggle("hide");
+  }
 };
 
 const removeTopicFromFavourites = (language) => {

@@ -12,17 +12,21 @@
   --white: #ffffff;
   --white-static: #ffffff;
   --grey-border-color: #d6d6d6;
+  --grey-border-color-static: #d6d6d6;
   --author-color: #5d5d5d;
   --top-paragraph-color: #333333;
 
   /* Box-Shadow */
-  --box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px;
-
+  /* --box-shadow: rgba(100, 100, 111, 0.2) 0px 5px 15px 0px; */
+  --box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
   /* Borders */
   --favourite-topic-border: 1px solid var(--grey-border-color);
 
   /* Fonts */
   --primary-font: "Nunito Sans", sans-serif;
+}
+* {
+  box-sizing: border-box;
 }
 .dark {
   /* Colors */
@@ -79,6 +83,9 @@
 }
 .decoration-none {
   text-decoration: none;
+}
+.display-block {
+  display: block;
 }
 .hide {
   display: none;

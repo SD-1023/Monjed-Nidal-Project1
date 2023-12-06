@@ -7,19 +7,18 @@
 }
 .favouratesTitle {
   margin: 0.4rem 0rem;
+  flex-grow: 0;
 }
 
 .favouriteTopicsList {
-  padding: 0px;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(144px, 1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fill, minmax(9rem, 1fr));
+  gap: 1.5rem;
+  padding: 0px;
   padding-bottom: 0.5rem;
 }
 
 .favouriteTopic {
-  position: relative;
-  max-width: 9rem;
   border: var(--favourite-topic-border);
 }
 .favouriteTopicImg {
@@ -27,17 +26,22 @@
   border-top-right-radius: 10px;
   border-top-left-radius: 10px;
   width: 100%;
-  height: 75px;
+  height: 69px;
 }
 .favouriteTopicInfo {
-  padding: 0rem 0.5rem;
-  padding-bottom: 0.3rem;
+  padding: 0.5rem;
+  padding-top: 0rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
+.favouriteTopicStars {
+  margin: 0px;
+  font-size: 18px;
+}
 .removeIcon {
   font-size: 18px;
+  flex-shrink: 0;
 }
 .removeIcon:hover {
   cursor: pointer;
