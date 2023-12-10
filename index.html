@@ -8,9 +8,10 @@
       content="Top programming topics here in many categories"
     />
     <title>Project 1</title>
-    <link rel="stylesheet" href="css/constants.css" />
-    <link rel="stylesheet" href="css/styles.css" />
-    <link rel="stylesheet" href="css/favourates.css" />
+    <link rel="stylesheet" href="./css/constants.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link rel="stylesheet" href="./css/favourates.css" />
+    <link rel="stylesheet" href="./css/loader.css" />
   </head>
   <body>
     <header
@@ -42,69 +43,56 @@
         </p>
       </div>
     </section>
-    <section class="container">
-      <form class="inputSection d-flex box-shadow rounded">
-        <div class="searchSection d-flex justify-center">
-          <ion-icon class="searchIcon icon" name="search-outline"></ion-icon>
-          <input
-            class="inputField"
-            type="text"
-            placeholder="Search the website..."
-          />
-        </div>
-
-        <div class="selectsContainer d-flex">
-          <div class="selectInput sortInput">
-            <label for="sortSelect" class="sortTitle">Sort by:</label>
-            <select class="styled-select" name="sort" id="sortSelect">
-              <option value="default">Default</option>
-              <option value="language">Language</option>
-            </select>
+    <main class="homeMain">
+      <section class="container">
+        <form class="inputSection d-flex box-shadow rounded">
+          <div class="searchSection d-flex justify-center">
+            <ion-icon class="searchIcon icon" name="search-outline"></ion-icon>
+            <input
+              class="inputField"
+              type="text"
+              placeholder="Search the website..."
+            />
           </div>
-          <div class="selectInput" id="filterInput">
-            <label for="filterSelect" class="filterTitle">Filter by:</label>
-            <select class="styled-select" name="filter" id="filterSelect">
-              <option value="default" selected>Default</option>
-              <option
-                value="Web Development Languages
-              "
-              >
-                Web Languages
-              </option>
-              <option
-                value="Frontend Frameworks and Libraries
-              "
-              >
-                Frontend
-              </option>
-              <option
-                value="Backend Frameworks and Libraries
-              "
-              >
-                Backend
-              </option>
-              <option
-                value="Databases and APIs
-              "
-              >
-                Databases
-              </option>
-            </select>
-          </div>
-        </div>
-      </form>
-    </section>
-    <h2 class="topicsTitle container">
-      <span id="topicsCounter"></span> Web Topics Found
-    </h2>
-    <section class="topics container" id="topicsContainer"></section>
 
-    <footer>
-      <p class="d-flex align-center justify-center">
-        Developed with <ion-icon class="filledHeart" name="heart"></ion-icon> ©
-        2023
-      </p>
-    </footer>
+          <div class="selectsContainer d-flex">
+            <div class="selectInput sortInput">
+              <label for="sortSelect" class="sortTitle">Sort by:</label>
+              <select class="styled-select" name="sort" id="sortSelect">
+                <option value="default">Default</option>
+                <option value="language">Language</option>
+              </select>
+            </div>
+            <div class="selectInput" id="filterInput">
+              <label for="filterSelect" class="filterTitle">Filter by:</label>
+              <select class="styled-select" name="filter" id="filterSelect">
+                <option value="default" selected>Default</option>
+              </select>
+            </div>
+          </div>
+        </form>
+      </section>
+      <h2 class="topicsTitle container">
+        <span id="topicsCounter"></span> Web Topics Found
+      </h2>
+      <section class="topics container" id="topicsContainer"></section>
+
+      <footer>
+        <p class="d-flex align-center justify-center">
+          Developed with
+          <ion-icon class="filledHeart" name="heart"></ion-icon> © 2023
+        </p>
+      </footer>
+    </main>
+
+    <div class="loaderContainer d-flex align-center justify-center">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"

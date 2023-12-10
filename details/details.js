@@ -14,26 +14,42 @@ const subTopicsTitleLanguage = document.querySelector(
 const subTopicsList = document.querySelector(".subTopicsList");
 const devName = document.querySelector(".devName");
 const addToFavButton = document.querySelector(".addToFavButton");
+let selectedTopic;
 
-const selectedTopic = JSON.parse(localStorage.getItem("selectedTopic"));
-topicCategory.innerText = selectedTopic.title;
-language.innerText = selectedTopic.language;
-asideLanguage.innerText = selectedTopic.language;
-topicDescription.innerText = selectedTopic.description;
-topicImg.src = `..${selectedTopic.imageSource}`;
-devName.innerText = selectedTopic.author;
-subTopicsTitleLanguage.innerText = selectedTopic.language;
-selectedTopic.supTopics.forEach((sup) => {
-  const li = document.createElement("li");
-  li.innerHTML = `
+async function fetchSelectedTopic() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const id = urlParams.get("id");
+  console.log("ID:", id);
+  await fetch(`https://tap-web-1.herokuapp.com/topics/details/${id}`)
+    .then((response) => response.json())
+    .then((data) => {
+      selectedTopic = data;
+      console.log(selectedTopic);
+    })
+    .catch((error) => console.error("Error fetching topic details:", error));
+}
+fetchSelectedTopic();
+
+function fillContent() {
+  topicCategory.innerText = selectedTopic.category;
+  language.innerText = selectedTopic.topic;
+  asideLanguage.innerText = selectedTopic.topic;
+  topicDescription.innerText = selectedTopic.description;
+  topicImg.src = `../assets/images/${selectedTopic.image}`;
+  devName.innerText = selectedTopic.name;
+  subTopicsTitleLanguage.innerText = selectedTopic.topic;
+  selectedTopic.subtopics.forEach((sup) => {
+    const li = document.createElement("li");
+    li.innerHTML = `
       <ion-icon class="checkmarkIcon" name="checkmark-circle-outline">
       </ion-icon>${sup}
     `;
-  li.classList.add("subTopicsListItem");
-  li.classList.add("d-flex");
-  li.classList.add("align-center");
-  subTopicsList.appendChild(li);
-});
+    li.classList.add("subTopicsListItem");
+    li.classList.add("d-flex");
+    li.classList.add("align-center");
+    subTopicsList.appendChild(li);
+  });
+}
 
 addToFavButton.addEventListener("click", () => {
   if (saveTopic(selectedTopic)) {
@@ -55,9 +71,13 @@ function updateLeftOffset() {
     subTopicsContainer.style.width = "unset";
   }
 }
-updateLeftOffset();
 
 window.addEventListener("resize", () => {
+  updateLeftOffset();
+});
+window.addEventListener("load", async () => {
+  await fetchSelectedTopic();
+  fillContent();
   updateLeftOffset();
 });
 

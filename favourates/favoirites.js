@@ -9,14 +9,16 @@ const showFavouriteSection = () => {
 
 window.addEventListener("load", () => {
   favouritesSection.className = "favouritesSection hide container box-shadow";
-  favouritesButton.addEventListener("click", () => {
-    const existingFavourites =
-      JSON.parse(localStorage.getItem("favourites")) || [];
-    if (existingFavourites[0]) {
-      showFavouriteSection();
-    }
-  });
 });
+
+favouritesButton.addEventListener("click", () => {
+  const existingFavourites =
+    JSON.parse(localStorage.getItem("favourites")) || [];
+  if (existingFavourites[0]) {
+    showFavouriteSection();
+  }
+});
+
 favouritesSection.innerHTML = `
 <h3 class="favouritesTitle">My Favourite Topics</h3>
 `;
@@ -25,16 +27,16 @@ favouritesSection.appendChild(favouriteTopicsList);
 body.appendChild(favouritesSection);
 
 const addTopicToFavourites = (topic) => {
-  const newDiv = document.createElement("div");
-  newDiv.innerHTML = `
+  const newLi = document.createElement("li");
+  newLi.innerHTML = `
     <img
       class="favouriteTopicImg"
-      src="..${topic.imageSource}"
-      alt="${topic.language}"
+      src="../assets/images/${topic.image}"
+      alt="${topic.topic}"
     />
     <div class="favouriteTopicInfo">
     <div>
-      <h4 class="favouriteTopicTitle text-overflow">${topic.language}</h4>
+      <h4 class="favouriteTopicTitle text-overflow">${topic.topic}</h4>
       <div class="stars favouriteTopicStars d-flex align-center">
       <ion-icon class="star" name="star"></ion-icon>
       <ion-icon class="star" name="star"></ion-icon>
@@ -44,17 +46,15 @@ const addTopicToFavourites = (topic) => {
     </div>
     </div>
       <ion-icon class="removeIcon" name="heart-dislike-outline"></ion-icon>
-    </div>
-    
-    `;
-  newDiv.className = "favouriteTopic rounded box-shadow";
-  favouriteTopicsList.appendChild(newDiv);
+    </div>`;
+  newLi.className = "favouriteTopic rounded box-shadow";
+  favouriteTopicsList.appendChild(newLi);
 };
 const saveTopic = (topic) => {
   const existingFavourites =
     JSON.parse(localStorage.getItem("favourites")) || [];
   const isTopicExists = existingFavourites.some(
-    (existingTopic) => existingTopic.language === topic.language
+    (existingTopic) => existingTopic.topic === topic.topic
   );
   if (!isTopicExists) {
     existingFavourites.push(topic);
@@ -62,6 +62,7 @@ const saveTopic = (topic) => {
     showFavouriteSection();
     return true;
   }
+  showFavouriteSection();
   return false;
 };
 const renderFavouriteTopics = () => {
@@ -82,7 +83,7 @@ const removeTopicFromFavourites = (language) => {
   const existingFavourites =
     JSON.parse(localStorage.getItem("favourites")) || [];
   const updatedFavourites = existingFavourites.filter(
-    (topic) => topic.language !== language
+    (topic) => topic.topic !== language
   );
   localStorage.setItem("favourites", JSON.stringify(updatedFavourites));
   renderFavouriteTopics();
@@ -100,6 +101,6 @@ if (JSON.parse(localStorage.getItem("favourites"))) {
   favArray.forEach((topic) => {
     addTopicToFavourites(topic);
   });
-} else {
-  favouritesSection.style.display = "none";
 }
+
+// localStorage.clear();

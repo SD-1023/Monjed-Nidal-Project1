@@ -8,13 +8,14 @@
   .info {
     width: 100%;
   }
-
+  aside {
+    width: unset;
+  }
   .test {
     position: static;
   }
   .subTopics {
     position: static;
-    /* margin: 1.5rem 1rem; */
     width: unset;
   }
   .subTopicsListItem {

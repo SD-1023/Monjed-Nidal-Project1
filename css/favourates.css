@@ -19,6 +19,7 @@
 
 .favouriteTopic {
   border: var(--favourite-topic-border);
+  list-style-type: none;
 }
 .favouriteTopicImg {
   background-color: #ffffff;
