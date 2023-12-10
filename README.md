@@ -1,4 +1,3 @@
 # Monjed-Nidal-Project1
 
-Because of some technical issues, i deployed the project on netlify instead of github pages.
-here is the deployed site link https://sd1023-project1-monjed-nidal.netlify.app
+You can watch the deployed site [here](https://sd-1023.github.io/Monjed-Nidal-Project1/), I'm open to your feedback.
