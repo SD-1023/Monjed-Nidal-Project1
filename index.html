@@ -7,11 +7,12 @@
       name="description"
       content="Top programming topics here in many categories"
     />
-    <title>Project 1</title>
+    <title>Web Topics</title>
     <link rel="stylesheet" href="./css/constants.css" />
     <link rel="stylesheet" href="./css/styles.css" />
     <link rel="stylesheet" href="./css/favourates.css" />
     <link rel="stylesheet" href="./css/loader.css" />
+    <link rel="stylesheet" href="../css/errorPage.css" />
   </head>
   <body>
     <header
@@ -58,14 +59,23 @@
           <div class="selectsContainer d-flex">
             <div class="selectInput sortInput">
               <label for="sortSelect" class="sortTitle">Sort by:</label>
-              <select class="styled-select" name="sort" id="sortSelect">
-                <option value="default">Default</option>
-                <option value="language">Language</option>
+              <select
+                class="styled-select text-overflow"
+                name="sort"
+                id="sortSelect"
+              >
+                <option value="default" hidden>Default</option>
+                <option value="topic">Language</option>
+                <option value="name">Author</option>
               </select>
             </div>
             <div class="selectInput" id="filterInput">
               <label for="filterSelect" class="filterTitle">Filter by:</label>
-              <select class="styled-select" name="filter" id="filterSelect">
+              <select
+                class="styled-select text-overflow"
+                name="filter"
+                id="filterSelect"
+              >
                 <option value="default" selected>Default</option>
               </select>
             </div>

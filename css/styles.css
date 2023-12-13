@@ -101,6 +101,7 @@ body {
 .selectsContainer .selectInput {
   padding: 0.2rem 0.5rem;
   width: 100%;
+  overflow-x: hidden;
 }
 .styled-select {
   border: none;
@@ -112,7 +113,9 @@ body {
   background-color: var(--white);
   color: var(--body-text);
 }
-
+.styled-select option {
+  max-width: inherit;
+}
 .selectsContainer label {
   font-size: 13px;
   padding-left: 4px;
@@ -151,11 +154,16 @@ body {
 
 .topicTitle {
   margin: 0px;
+  font-size: 15px;
 }
 .language {
   font-weight: 700;
   margin-block: 0rem 0.5rem;
-  font-size: 1.1rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2; /* Number of lines to show */
+  -webkit-box-orient: vertical;
 }
 .stars {
   margin: 1rem 0rem;

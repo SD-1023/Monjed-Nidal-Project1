@@ -9,6 +9,12 @@ const showFavouriteSection = () => {
 
 window.addEventListener("load", () => {
   favouritesSection.className = "favouritesSection hide container box-shadow";
+  favouritesSection.innerHTML = `
+  <h3 class="favouritesTitle">My Favourite Topics</h3>
+  `;
+  favouriteTopicsList.classList.add("favouriteTopicsList");
+  favouritesSection.appendChild(favouriteTopicsList);
+  body.appendChild(favouritesSection);
 });
 
 favouritesButton.addEventListener("click", () => {
@@ -18,13 +24,6 @@ favouritesButton.addEventListener("click", () => {
     showFavouriteSection();
   }
 });
-
-favouritesSection.innerHTML = `
-<h3 class="favouritesTitle">My Favourite Topics</h3>
-`;
-favouriteTopicsList.classList.add("favouriteTopicsList");
-favouritesSection.appendChild(favouriteTopicsList);
-body.appendChild(favouritesSection);
 
 const addTopicToFavourites = (topic) => {
   const newLi = document.createElement("li");

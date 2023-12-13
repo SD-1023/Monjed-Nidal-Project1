@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="../css/favourates.css" />
     <link rel="stylesheet" href="../css/details.css" />
     <link rel="stylesheet" href="../css/detailsMediaQueries.css" />
+    <link rel="stylesheet" href="../css/errorPage.css" />
+    <link rel="stylesheet" href="../css/loader.css" />
   </head>
   <body>
     <header
@@ -96,6 +98,15 @@
         </p>
       </footer>
     </main>
+
+    <div class="loaderContainer d-flex align-center justify-center">
+      <div class="loader">
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+        <div class="circle"></div>
+      </div>
+    </div>
     <script
       type="module"
       src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
@@ -106,7 +117,7 @@
     ></script>
     <script src="../navbar/navbar.js"></script>
     <script src="../favourates/favoirites.js"></script>
-    <script src="./details.js"></script>
+    <script src="./details.js" type="module"></script>
     <script src="./detailsTheme.js"></script>
   </body>
 </html>

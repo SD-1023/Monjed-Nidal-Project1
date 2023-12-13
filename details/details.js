@@ -1,7 +1,6 @@
+import { fetchTopicDetails } from "../apiFetches.js";
 const detailsContainer = document.getElementById("detailsContainer");
 const info = document.querySelector(".info");
-const infoSection = document.querySelector(".infoSection");
-const infoContainer = document.querySelector(".infoContainer");
 const topicCategory = document.querySelector(".topicCategory");
 const language = document.querySelector(".detailsLanguage");
 const asideLanguage = document.querySelector(".asideLanguage");
@@ -14,21 +13,40 @@ const subTopicsTitleLanguage = document.querySelector(
 const subTopicsList = document.querySelector(".subTopicsList");
 const devName = document.querySelector(".devName");
 const addToFavButton = document.querySelector(".addToFavButton");
+const loader = document.querySelector(".loaderContainer");
+
 let selectedTopic;
 
+function showLoader() {
+  loader.style.display = "flex";
+  detailsContainer.style.display = "none";
+}
+
+function hideLoader() {
+  loader.style.display = "none";
+  detailsContainer.style.display = "block";
+}
+function showErrorPage() {
+  detailsContainer.style.display = "none";
+  const errorPage = document.createElement("main");
+  errorPage.classList.add("errorPage");
+  errorPage.innerHTML = `
+    <p class="error">Error Loading the page!</p>
+    <a class="backBtn" href="../index.html">Back to home page</a>
+  `;
+  body.appendChild(errorPage);
+}
+
 async function fetchSelectedTopic() {
+  showLoader();
   const urlParams = new URLSearchParams(window.location.search);
   const id = urlParams.get("id");
-  console.log("ID:", id);
-  await fetch(`https://tap-web-1.herokuapp.com/topics/details/${id}`)
-    .then((response) => response.json())
-    .then((data) => {
-      selectedTopic = data;
-      console.log(selectedTopic);
-    })
-    .catch((error) => console.error("Error fetching topic details:", error));
+  selectedTopic = await fetchTopicDetails(id);
+  hideLoader();
+  if (!selectedTopic) {
+    showErrorPage();
+  }
 }
-fetchSelectedTopic();
 
 function fillContent() {
   topicCategory.innerText = selectedTopic.category;
@@ -80,25 +98,3 @@ window.addEventListener("load", async () => {
   fillContent();
   updateLeftOffset();
 });
-
-// infoContainer.innerHTML = `
-// <span class="">${selectedTopic.title}</span>
-// <h2 class="language">${selectedTopic.language}</h2>
-// <p class="topicDescription">
-//   ${selectedTopic.description}
-// </p>
-// </div>
-// <aside class="box-shadow">
-// <img class="topicImg" src="${selectedTopic.imageSource}" alt="" />
-// <div class="asideInfo">
-//   <p><b class="language">${selectedTopic.language}</b> by <a class="devName" href="#">${selectedTopic.author}</a></p>
-//   <div class="addToFavourites">
-//     <p>Interested about this topic?</p>
-//     <a class="addToFavButton" href="#"
-//       >Add to Favoutites
-//       <ion-icon class="icon" name="heart-outline"></ion-icon
-//     ></a>
-//     <small class="unlimitedCreds">Unlimited Credits</small>
-//   </div>
-// </div>
-// </aside>`;

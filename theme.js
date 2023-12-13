@@ -17,11 +17,11 @@ darkModeButton.addEventListener("click", () => {
     setDarkTheme();
   }
 });
+
 if (
   !localStorage.getItem("theme") &&
   window.matchMedia("(prefers-color-scheme: dark)").matches
 ) {
-  console.log("gggggg");
   setDarkTheme();
 } else if (localStorage.getItem("theme") === "dark") {
   setDarkTheme();

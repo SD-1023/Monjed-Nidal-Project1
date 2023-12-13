@@ -1,3 +1,4 @@
+import { searchFetch, topicsFetch } from "./apiFetches.js";
 const topicsContainer = document.getElementById("topicsContainer");
 const homeMain = document.querySelector(".homeMain");
 const inputField = document.querySelector(".inputField");
@@ -5,42 +6,61 @@ const topicsCounter = document.querySelector("#topicsCounter");
 const sortSelect = document.querySelector("#sortSelect");
 const filterSelect = document.querySelector("#filterSelect");
 const loader = document.querySelector(".loaderContainer");
-let isLoading = false;
 
 let topicsData = [];
+let filteredTopics = [];
 let categories = [];
+const cache = {};
+const DEBOUNCE_TIME = 300;
+let timer;
 
 function showLoader() {
   loader.style.display = "flex";
   homeMain.style.display = "none";
 }
-//<option value="Web Development Languages">Web Languages</option>
-
 function hideLoader() {
   loader.style.display = "none";
   homeMain.style.display = "block";
 }
 
-async function fetchTopicsData() {
-  showLoader();
+function showErrorPage() {
+  homeMain.style.display = "none";
+  const errorPage = document.createElement("main");
+  errorPage.classList.add("errorPage");
+  errorPage.innerHTML = `
+    <p class="error">Something went wrong. Web topics failed to load.</p>
+    <a class="backBtn" href="./index.html">Reload Page</a>
+  `;
+  body.appendChild(errorPage);
+}
 
-  try {
-    const response = await fetch("https://tap-web-1.herokuapp.com/topics/list");
-    const data = await response.json();
-    topicsData = data;
-  } catch (error) {
-    console.error("Error fetching topics data:", error);
-  } finally {
-    hideLoader();
+async function getTopicsData() {
+  showLoader();
+  topicsData = await topicsFetch();
+  filteredTopics = topicsData;
+  hideLoader();
+  if (!topicsData) {
+    showErrorPage();
   }
 }
 
-function renderTopics(filteredTopics) {
+function getAndLoadCategoris(topics) {
+  topics.forEach((topic) => {
+    if (!categories.includes(topic.category)) {
+      categories.push(topic.category);
+      const option = document.createElement("option");
+      option.value = topic.category;
+      option.textContent = topic.category;
+      filterSelect.appendChild(option);
+    }
+  });
+}
+
+function renderTopics(topicsList) {
+  getAndLoadCategoris(filteredTopics);
   topicsContainer.innerHTML = "";
-  topicsCounter.innerHTML = filteredTopics
-    ? `"${filteredTopics.length}"`
-    : `No`;
-  filteredTopics.forEach((topic) => {
+  topicsCounter.innerHTML = topicsList ? `"${topicsList.length}"` : `No`;
+  topicsList.forEach((topic) => {
     const topicCard = document.createElement("a");
     topicCard.href = `details/details.html?id=${topic.id}`;
     topicCard.className = "topic decoration-none box-shadow rounded";
@@ -66,19 +86,80 @@ function renderTopics(filteredTopics) {
     topicsContainer.appendChild(topicCard);
   });
 }
+function sortTopics(arrayOfTopics, sortMethod) {
+  const compareFunction = (topic1, topic2) => {
+    const topic1Value = topic1[sortMethod].toLowerCase();
+    const topic2Value = topic2[sortMethod].toLowerCase();
+    return topic1Value.localeCompare(topic2Value);
+  };
+  return arrayOfTopics.sort(compareFunction);
+}
 
-function handleSearch(searchTerm) {
-  let filteredTopics = topicsData.filter((topic) =>
-    topic.topic.toLowerCase().includes(searchTerm.toLowerCase())
-  );
-  setTimeout(() => {
-    renderTopics(filteredTopics);
-  }, 300);
+function debouncedFormChangeHandler(searchTerm) {
+  if (timer) {
+    clearTimeout(timer);
+  }
+  timer = setTimeout(async () => {
+    await formChangeHandler(searchTerm);
+  }, DEBOUNCE_TIME);
+}
+
+async function formChangeHandler(searchTerm) {
+  if (inputField.value !== "") {
+    if (cache[searchTerm]) {
+      filteredTopics = cache[searchTerm];
+    } else {
+      filteredTopics = await searchFetch(searchTerm);
+      cache[searchTerm] = filteredTopics;
+    }
+
+    if (filterSelect.value !== "default") {
+      filteredTopics = filteredTopics.filter((topic) => {
+        return topic.category === filterSelect.value;
+      });
+    }
+    if (sortSelect.value !== "default") {
+      filteredTopics = sortTopics(filteredTopics, sortSelect.value);
+    }
+  } else {
+    if (filterSelect.value !== "default") {
+      filteredTopics = topicsData.filter((topic) => {
+        return topic.category === filterSelect.value;
+      });
+      console.log(filteredTopics);
+    } else {
+      filteredTopics = topicsData;
+    }
+    if (sortSelect.value !== "default") {
+      filteredTopics = sortTopics(filteredTopics, sortSelect.value);
+    } else {
+      if (filterSelect.value === "default") {
+        filteredTopics = topicsData;
+
+        console.log(topicsData);
+      }
+    }
+  }
+  renderTopics(filteredTopics);
 }
 
 inputField.addEventListener("input", (event) => {
-  handleSearch(event.target.value);
+  debouncedFormChangeHandler(event.target.value);
 });
 
-await fetchTopicsData();
-renderTopics(topicsData);
+filterSelect.addEventListener("change", () => {
+  formChangeHandler(inputField.value);
+});
+sortSelect.addEventListener("change", () => {
+  formChangeHandler(inputField.value);
+});
+
+window.addEventListener("load", async () => {
+  await getTopicsData();
+  await formChangeHandler(inputField.value);
+  if (filteredTopics) {
+    renderTopics(filteredTopics);
+  } else {
+    renderTopics(topicsData);
+  }
+});
